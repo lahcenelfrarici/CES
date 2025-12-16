@@ -1,0 +1,39 @@
+global-css:
+  version: 1.0
+  css:
+    theme:
+      ./ces/assets/css/all.min.css: {}
+      ./ces/assets/css/bootstrap.min.css: {}
+      ./ces/assets/css/owl.carousel.min.css: {}
+      ./ces/assets/css/owl.theme.default.min.css: {}
+      ./ces/assets/css/aos.css: {}
+      # ./ces/assets/css/slick.css: {}
+      ./ces/assets/css/style.css: {}
+      ./ces/assets/css/style_dr.css: {}
+      # ./ces/assets/css/ayoub.css: {}
+      ./ces/assets/css/responsive.css: {}
+
+global-js:
+  version: 1.0
+  js:
+    # ./ces/assets/js/jquery-3.7.1.min.js: {}
+    ./ces/assets/js/jquery-ui.min.js: {}
+    ./ces/assets/js/bootstrap.bundle.min.js: {}
+    ./ces/assets/js/owl.carousel.min.js: {}
+    ./ces/assets/js/slick.min.js: {}
+    ./ces/assets/js/aos.js: {}
+    ./ces/assets/js/scripts.js: {}
+    # ./ces/assets/js/ayoub.js: {}
+  dependencies:
+    - core/jquery
+
+
+global-css-rtl:
+  css:
+    theme:
+      ./ces/assets/css/style-rtl.css: {}
+
+global-css-responsive:
+  css:
+    theme:
+      ./ces/assets/css/responsive.css: {}

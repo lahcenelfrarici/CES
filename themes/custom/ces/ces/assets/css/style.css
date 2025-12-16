@@ -1,0 +1,38 @@
+
+.scrolled_header .group {
+  display: none;
+}
+.scrolled_header nav >div {
+  background-color: color-mix(in oklab, var(--color-slate-900) 80%, transparent);
+  width: max-content;
+  padding-inline: calc(var(--spacing) * 8);
+  padding-block: calc(var(--spacing) * 3);
+  border-radius: 3.40282e38px;
+}
+.scrolled_header nav {
+  width: auto;
+}
+.scrolled_header img {
+  height: calc(var(--spacing) * 10);
+}
+.hover__bx > div:hover {
+  transform: translateY(-10px) !important;
+}
+.hover__bx > div {
+  transition: all .4s cubic-bezier(.65,.05,.36,1);
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-up-down {
+  animation: moveUpDown 1.5s ease-in-out infinite;
+}

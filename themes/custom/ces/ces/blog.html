@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>المباريات الحيّة — AllSportsAPI (Live)</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background: #f6f8fb; font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
+    .container { max-width: 1200px; margin-top: 20px; margin-bottom: 40px; }
+    .match-card { border-radius: 12px; box-shadow: 0 6px 18px rgba(20,30,50,0.06); overflow: hidden; }
+    .match-header { display:flex; align-items:center; gap:12px; padding:12px 16px; background: linear-gradient(90deg,#0d6efd10,#0dcaf010); }
+    .team { display:flex; align-items:center; gap:10px; min-width: 45%; }
+    .team img { width:40px; height:40px; object-fit:cover; border-radius:4px; }
+    .team .name { font-weight:700; font-size:1rem; }
+    .score { font-weight:800; font-size:1.25rem; text-align:center; min-width:80px; }
+    .meta { color:#556; font-size:0.9rem; padding: 8px 16px; border-top:1px solid #eceef3; background:#fff; }
+    .badge-live { background: #dc3545; color:#fff; padding:4px 8px; border-radius:999px; font-weight:700; font-size:0.8rem; }
+    .section-title { font-weight:700; margin-top:10px; margin-bottom:6px; }
+    .small-muted { color:#6c757d; font-size:0.9rem; }
+    .details { padding: 12px 16px 20px; background: #fff; border-top: 1px dashed #eef0f4; }
+    .goal, .card-item, .substitute { padding:6px 8px; border-radius:6px; margin-bottom:6px; background:#fafbff; }
+    .stat-row { display:flex; justify-content:space-between; gap:8px; margin-bottom:6px; }
+    .placeholder { color:#9aa0a6; font-style:italic; }
+    .controls { display:flex; gap:8px; align-items:center; }
+    .error { color:#b02a37; font-weight:700; }
+    .logo-league { width:28px; height:28px; object-fit:contain; margin-left:8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="m-0">المباريات الحيّة — AllSportsAPI</h2>
+      <div class="controls">
+        <div id="connectionStatus" class="small-muted">جاري الاتصال...</div>
+        <button id="clearBtn" class="btn btn-outline-secondary btn-sm">مسح الكروت</button>
+      </div>
+    </div>
+
+    <div id="matchesList" class="row gy-3">
+      <!-- بطاقات المباريات تظهر هنا -->
+    </div>
+
+    <div id="logArea" class="mt-3" style="display:none;">
+      <h6>لوغ/سجل الاتصال</h6>
+      <pre id="logPre" style="max-height:200px; overflow:auto; background:#fff; padding:10px; border-radius:6px;"></pre>
+    </div>
+  </div>
+
+<script>
+/* ============================
+   إعداد المفتاح و WebSocket
+   ============================ */
+const API_KEY = "aceebba86cbeb3212781cfb33d195d2139e46a28a36fe0979ff1076dd11402b1";
+const TIMEZONE = encodeURIComponent("Africa/Casablanca"); // استخدم timezone بصيغة tz
+const WS_URL = `wss://wss.allsportsapi.com/live_events?APIkey=${API_KEY}&timezone=${TIMEZONE}`;
+
+/* عناصر DOM */
+const matchesList = document.getElementById('matchesList');
+const connectionStatus = document.getElementById('connectionStatus');
+const logArea = document.getElementById('logArea');
+const logPre = document.getElementById('logPre');
+const clearBtn = document.getElementById('clearBtn');
+
+clearBtn.addEventListener('click', () => {
+  matchesList.innerHTML = '';
+});
+
+/* حالة الاتصالات ولقطات المباريات */
+let ws = null;
+let reconnectAttempts = 0;
+const matches = new Map(); // key: event_key, value: object
+
+function log(msg) {
+  console.log(msg);
+  logArea.style.display = 'block';
+  logPre.textContent = new Date().toLocaleTimeString() + ' — ' + msg + '\n' + logPre.textContent;
+}
+
+/* إنشاء بطاقة مباراة أو تحديثها */
+function renderOrUpdateMatch(data) {
+  // data هو كائن يمثل المباراة كما يرسله السيرفر (مصفوفة من كائنات عادةً)
+  const key = data.event_key || data.event_key || (data.event_key === 0 ? "0" : null);
+  if (!key) return;
+
+  // خزّن أو حدّث
+  matches.set(key, data);
+
+  // بحث إذا كانت البطاقة موجودة
+  let card = document.getElementById('match-' + key);
+  if (!card) {
+    // أنشئ بطاقة جديدة
+    card = document.createElement('div');
+    card.className = 'col-12 col-md-6';
+    card.id = 'match-' + key;
+    card.innerHTML = matchCardHTML(data);
+    matchesList.prepend(card); // ضع الأحدث في الأعلى
+    attachToggleHandlers(card, key);
+  } else {
+    // مجرد تحديث للأجزاء الديناميكية: النتيجة، الحالة، قوائم الهدافين/البطاقات/الإحصاءات
+    updateCardDynamicParts(card, data);
+  }
+}
+
+/* HTML أساسي لبطاقة المباراة */
+function matchCardHTML(m) {
+  const homeLogo = m.league_logo || m.country_logo || '';
+  // لاحظ أن API قد تزود صور للدوريات وليس للفرق — إن لم تتوفر شعارات للفرق سنعرض مكان فارغ
+  return `
+    <div class="match-card">
+      <div class="match-header">
+        <div class="team">
+          <img src="${m.home_team_logo || ''}" alt="home logo" onerror="this.style.display='none'">
+          <div>
+            <div class="name">${escapeHtml(m.event_home_team || m.event_home || 'Home')}</div>
+            <div class="small-muted">${escapeHtml(m.event_home_formation || '')}</div>
+          </div>
+        </div>
+
+        <div class="score" id="score-${m.event_key}">
+          ${formatGoals(m.event_final_result, m.event_ft_result, m.event_halftime_result) }
+        </div>
+
+        <div class="team" style="justify-content:flex-end;">
+          <div style="text-align:right;">
+            <div class="name">${escapeHtml(m.event_away_team || m.event_away || 'Away')}</div>
+            <div class="small-muted">${escapeHtml(m.event_away_formation || '')}</div>
+          </div>
+          <img src="${m.away_team_logo || ''}" alt="away logo" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="meta d-flex justify-content-between align-items-center">
+        <div>
+          <span class="small-muted">الدوري: </span><strong>${escapeHtml(m.league_name || m.league || '—')}</strong>
+          ${m.league_logo ? `<img src="${m.league_logo}" class="logo-league" alt="league">` : ''}
+        </div>
+        <div class="text-end">
+          <div class="${m.event_live === "1" ? 'badge-live' : 'small-muted'}" id="livebadge-${m.event_key}">
+            ${m.event_live === "1" ? 'مباشر' : (m.event_status ? escapeHtml(m.event_status) : '—')}
+          </div>
+          <div class="small-muted">${escapeHtml(m.event_date || '')} ${escapeHtml(m.event_time || '')}</div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="section-title">النتيجة</div>
+            <div id="finalResult-${m.event_key}" class="small-muted">${escapeHtml(m.event_final_result || m.event_ft_result || '—')}</div>
+            <div class="section-title">نصف الوقت</div>
+            <div id="htResult-${m.event_key}" class="small-muted">${escapeHtml(m.event_halftime_result || '—')}</div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="section-title">الهدافون</div>
+            <div id="goals-${m.event_key}">
+              ${renderGoalsList(m.goalscorers)}
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="section-title">بطاقات & تبديلات</div>
+            <div id="cards-${m.event_key}">
+              ${renderCardsList(m.cards)}
+            </div>
+            <div class="mt-2" id="subs-${m.event_key}">
+              ${renderSubsList(m.substitutes)}
+            </div>
+          </div>
+
+          <div class="col-12 mt-3">
+            <a class="btn btn-sm btn-outline-primary" data-toggle-target="#stats-${m.event_key}" href="javascript:void(0)">عرض الإحصائيات</a>
+            <div id="stats-${m.event_key}" class="mt-2" style="display:none;">
+              ${renderStats(m.statistics)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* تحديث الأجزاء الديناميكية داخل البطاقة */
+function updateCardDynamicParts(card, m) {
+  // النتيجة
+  const scoreEl = card.querySelector(`#score-${m.event_key}`);
+  if (scoreEl) {
+    scoreEl.textContent = formatGoals(m.event_final_result, m.event_ft_result, m.event_halftime_result);
+  }
+
+  // شارات الحالة المباشرة
+  const badge = card.querySelector(`#livebadge-${m.event_key}`);
+  if (badge) {
+    badge.className = m.event_live === "1" ? 'badge-live' : 'small-muted';
+    badge.textContent = m.event_live === "1" ? 'مباشر' : (m.event_status || '—');
+  }
+
+  // تفاصيل النتائج
+  const finalResult = card.querySelector(`#finalResult-${m.event_key}`);
+  if (finalResult) finalResult.textContent = m.event_final_result || m.event_ft_result || '—';
+  const htResult = card.querySelector(`#htResult-${m.event_key}`);
+  if (htResult) htResult.textContent = m.event_halftime_result || '—';
+
+  // قوائم الهدافين والبطاقات والتبديلات والإحصاءات
+  const goalsContainer = card.querySelector(`#goals-${m.event_key}`);
+  if (goalsContainer) goalsContainer.innerHTML = renderGoalsList(m.goalscorers);
+
+  const cardsContainer = card.querySelector(`#cards-${m.event_key}`);
+  if (cardsContainer) cardsContainer.innerHTML = renderCardsList(m.cards);
+
+  const subsContainer = card.querySelector(`#subs-${m.event_key}`);
+  if (subsContainer) subsContainer.innerHTML = renderSubsList(m.substitutes);
+
+  const statsContainer = card.querySelector(`#stats-${m.event_key}`);
+  if (statsContainer) statsContainer.innerHTML = renderStats(m.statistics);
+}
+
+/* مساعدة: توليد HTML لقائمة الهدافين */
+function renderGoalsList(goals) {
+  if (!goals || goals.length === 0) return `<div class="placeholder">لا توجد أهداف حتى الآن</div>`;
+  return goals.map(g => `
+    <div class="goal">
+      <div><strong>${escapeHtml(g.home_scorer || g.away_scorer || g.player || '—')}</strong> — الدقيقة: ${escapeHtml(g.time || g.minute || '—')}</div>
+      <div class="small-muted">النتيجة: ${escapeHtml(g.score || '')}</div>
+    </div>
+  `).join('');
+}
+
+/* مساعدة: بطاقات */
+function renderCardsList(cards) {
+  if (!cards || cards.length === 0) return `<div class="placeholder">لا توجد بطاقات</div>`;
+  return cards.map(c => `
+    <div class="card-item">
+      <div>${escapeHtml(c.card || c.type || 'card')} — ${escapeHtml(c.time || '')}</div>
+      <div class="small-muted">${escapeHtml(c.home_fault || c.away_fault || '')}</div>
+    </div>
+  `).join('');
+}
+
+/* مساعدة: تبديلات */
+function renderSubsList(subs) {
+  if (!subs || subs.length === 0) return `<div class="placeholder">لا توجد تبديلات</div>`;
+  return subs.map(s => {
+    // بعض المستجيبات تحتوي على شكل خاص؛ نتعامل مع احتمالات عديدة
+    const time = s.time || s.minute || '';
+    const home = s.home_scorer ? `In: ${s.home_scorer.in || ''} / Out: ${s.home_scorer.out || ''}` : '';
+    const away = s.away_scorer ? `In: ${s.away_scorer.in || ''} / Out: ${s.away_scorer.out || ''}` : '';
+    return `<div class="substitute"><div>${escapeHtml(time)}</div><div class="small-muted">${escapeHtml(home || away || s.score || '')}</div></div>`;
+  }).join('');
+}
+
+/* مساعدة: إحصاءات */
+function renderStats(stats) {
+  if (!stats || stats.length === 0) return `<div class="placeholder">لا توجد إحصاءات</div>`;
+  return stats.map(s => `
+    <div class="stat-row">
+      <div class="small-muted">${escapeHtml(s.type || s.name || '')}</div>
+      <div>${escapeHtml(s.home || s.home_val || '')} — ${escapeHtml(s.away || s.away_val || '')}</div>
+    </div>
+  `).join('');
+}
+
+/* تنسيق الأهداف/النتيجة لعرض جميل */
+function formatGoals(finalStr, ftStr, htStr) {
+  // بعض الحقول قد تكون "1 - 2" أو أرقام مفصولة. نعيد الأفضل المتوفر
+  if (finalStr && finalStr.trim() !== "") return finalStr;
+  if (ftStr && ftStr.trim() !== "") return ftStr;
+  // إن لم يوجد شيء يمكن عرض 0-0 مؤقت
+  return "0 - 0";
+}
+
+/* حماية: تهرب HTML لمنع XSS */
+function escapeHtml(unsafe) {
+  if (unsafe === undefined || unsafe === null) return '';
+  return String(unsafe)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+/* وصل أحداث النقر لفتح/غلق الإحصاءات */
+function attachToggleHandlers(card, key) {
+  const btn = card.querySelector('[data-toggle-target]');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const target = document.querySelector(btn.getAttribute('data-toggle-target'));
+    if (!target) return;
+    target.style.display = target.style.display === 'none' ? 'block' : 'none';
+  });
+}
+
+/* ============================
+   WebSocket: الاتصال وعمليات إعادة الاتصال
+   ============================ */
+function connectWebSocket() {
+  ws = new WebSocket(WS_URL);
+
+  ws.onopen = () => {
+    reconnectAttempts = 0;
+    connectionStatus.textContent = 'متصل ✔';
+    connectionStatus.style.color = '#198754';
+    log('WebSocket opened.');
+  };
+
+  ws.onmessage = (evt) => {
+    // الخادم يرسل نص JSON يمثل مصفوفة من المباريات (أو تحديث واحد)
+    try {
+      const data = JSON.parse(evt.data);
+      // data قد يكون مصفوفة أو كائن مفرد
+      const arr = Array.isArray(data) ? data : (data.result ? data.result : [data]);
+      arr.forEach(item => {
+        // بعض الحقول في المستند: event_key, event_date, event_time, event_home_team, goalscorers, cards, substitutes, lineups, statistics, event_live, event_final_result, league_name, league_logo...
+        renderOrUpdateMatch(item);
+      });
+      log('Received update: ' + (arr.length) + ' match(es).');
+    } catch (e) {
+      log('Error parsing message: ' + e.message);
+      console.error(e, evt.data);
+    }
+  };
+
+  ws.onerror = (err) => {
+    connectionStatus.textContent = 'خطأ في الاتصال';
+    connectionStatus.style.color = '#dc3545';
+    log('WebSocket error: ' + (err && err.message ? err.message : JSON.stringify(err)));
+  };
+
+  ws.onclose = (ev) => {
+    connectionStatus.textContent = 'مقطوع — معاد المحاولة...';
+    connectionStatus.style.color = '#6c757d';
+    log('WebSocket closed. code=' + ev.code + ' reason=' + ev.reason);
+    // محاولة إعادة اتصال بشكل تناسبي
+    reconnectAttempts++;
+    const delay = Math.min(30000, 1000 * Math.pow(1.8, reconnectAttempts)); // زيادة تدريجية حتى 30s
+    setTimeout(() => {
+      log('إعادة محاولة الاتصال #' + reconnectAttempts);
+      connectWebSocket();
+    }, delay);
+  };
+}
+
+/* ابدأ الاتصال */
+connectWebSocket();
+
+/* قبل الإغلاق: اغلق الاتصالات */
+window.addEventListener('beforeunload', () => {
+  if (ws) ws.close();
+});
+
+</script>
+
+<!-- Bootstrap JS (اختياري) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
