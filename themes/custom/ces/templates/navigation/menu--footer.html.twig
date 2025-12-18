@@ -20,30 +20,30 @@
  * @ingroup themeable
  */
 #}
+
+
+
 {% import _self as menus %}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  https://twig.symfony.com/doc/3.x/tags/macro.html
-#}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.footer_menu(items, 0) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
+{% macro footer_menu(items, level) %}
   {% if items %}
-    {% if menu_level == 0 %}
-      <ul class="list-unstyled footer-link">
-    {% else %}
-      <ul class="list-unstyled footer-link">
-    {% endif %}
-    {% for item in items %}
-      <li{{ item.attributes }}>
-        {{ link(item.title, item.url) }}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
+    <ul class="space-y-2 text-gray-400 text-sm">
+      {% for item in items %}
+        <li>
+          <a href="{{ item.url }}"
+             class="hover:text-cyan-400 transition-colors
+             {{ item.in_active_trail ? 'text-cyan-400' : '' }}">
+            {{ item.title }}
+          </a>
+
+          {# Optional sub-menu support #}
+          {% if item.below %}
+            {{ _self.footer_menu(item.below, level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
   {% endif %}
 {% endmacro %}

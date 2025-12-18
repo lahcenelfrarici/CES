@@ -1,10 +1,26 @@
 (function ($) {
   $(function () {
 
+    var path = window.location.pathname;
+
+  // Normalize the path (remove trailing slash)
+  if (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+
+  // Check if path is home (empty, /fr, or /en)
+  if (path === '' || path === '/fr' || path === '/en') {
+    // Remove active from other links
+    $('.items__menu_principe .group , .items__menu_principe .group span').removeClass('text-cyan-400');
+
+    // Add active to the first menu item
+    $('.items__menu_principe .group:first-child,.items__menu_principe .group:first-child span').addClass('text-cyan-400');
+  }
+
     // Mobile menu toggle
-  $('#click_mobile').on('click', function () {
-  $(this).toggleClass('is-open');
-});
+    $('#click_mobile').on('click', function () {
+      $(this).toggleClass('is-open');
+    });
 
 
     // Header scroll

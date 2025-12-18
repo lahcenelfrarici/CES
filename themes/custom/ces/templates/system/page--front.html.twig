@@ -58,121 +58,434 @@
 <!--  -->
 
 
-{{ drupal_entity('block','ces_hpsectionslider') }}
-{{ drupal_entity('block','ces_notremission') }}
-	{# <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content bg-dark">
-			<div class="modal-body p-0 position-relative">
-				<button type="button" class="btn-close btn-close-white position-absolute end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
-				<div
-					class="ratio ratio-16x9">
-					<!-- iframe directly in HTML -->
-					<iframe id="videoIframe" src="/sites/default/files/2025-09/WhatsApp%20Video%202025-09-17%20at%2022.50.12.mp4" title="ces Video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div> #}
-  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark">
-      <div class="modal-body p-0 position-relative">
-        <button type="button" class="btn-close btn-close-white position-absolute end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="ratio ratio-16x9">
-          <video  class="desktop__modal" controls>
-            <source src="/sites/default/files/2025-11/video_desk.mp4" type="video/mp4">
-
-          </video>
-             <video  class="mobile__modal" controls>
-            <source src="/sites/default/files/2025-10/notre_adn.mp4" type="video/mp4">
-
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div></section>{{ drupal_entity('block','ces_chiffrescles') }}<section class="section--4">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="title--sc">
-				<h2 class="section-title">{{'Derniers projets'|t}}</h2>
-
-				<p class="section-description-1 text-center">{{"Des projets architecturaux et urbains qui façonnent le présent et préparent l'avenir"|t}}.</p>
-			</div>
-
-		</div>
-	</div>
+{# {{ drupal_entity('block','ces_hpsectionslider') }}
+{{ drupal_entity('block','ces_notremission') }} #}
 
 
-	<div class="row">
-		{# <div class="col-md-6 col-lg-4 mb-4">
-			<div class="project-card card">
-				<a href="/Project_detail_page.html">
-					<img src="/themes/custom/ces/ces/assets/images/new1.png" class="project-img card-img-top" alt="Projet architectural moderne">
-					<div class="card-body">
-						<div class="project-category">Glass Tower Complex</div>
-						<h3 class="project-title">Tour Lumina</h3>
-						<p class="project-description">Une tour de 40 étages alliant durabilité et innovation technologique au
-														                  cœur du quartier d'affaires.</p>
-						<div class="see-all-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-								<path d="M15.1891 7.21816L8.03906 14.3682L4.83906 11.1682L5.53906 10.4582L8.03906 12.9582L14.4791 6.50816L15.1891 7.21816ZM9.53906 0.618164C14.7891 0.618164 19.0391 4.86816 19.0391 10.1182C19.0391 15.3682 14.7891 19.6182 9.53906 19.6182C4.28906 19.6182 0.0390625 15.3682 0.0390625 10.1182C0.0390625 4.86816 4.28906 0.618164 9.53906 0.618164ZM9.53906 1.61816C4.84906 1.61816 1.03906 5.42816 1.03906 10.1182C1.03906 14.8082 4.84906 18.6182 9.53906 18.6182C14.2291 18.6182 18.0391 14.8082 18.0391 10.1182C18.0391 5.42816 14.2291 1.61816 9.53906 1.61816Z" fill="white"/>
-							</svg>Terminé en 2021
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
+   <section class="relative min-h-screen flex items-center pt-20" id="banner__slider_hp">
+              <div class="absolute inset-0 overflow-hidden">
+                <div style="transform: none;" class="absolute inset-0"><img src="/{{ directory }}/ces/assets/images/section_1.png"
+                    alt="Industrial laundry equipment" class="w-full h-full object-cover opacity-30">
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/80 to-slate-950"></div>
+                </div>
+              </div>
+              <div class="relative z-10 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
+                <div style="opacity: 1; transform: none;">
+                  <div class="inline-block mb-6" style="opacity: 1; transform: none;">
+                    <div
+                      class="bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 text-cyan-300 text-sm flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-zap w-4 h-4" aria-hidden="true">
+                        <path
+                          d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                        </path>
+                      </svg>Solutions d'Équipement Premium</div>
+                  </div>
+                  <h1 class="text-7xl lg:text-8xl mb-6 leading-none" style="opacity: 1; transform: none;"><span
+                      class="text-white block">Équipez</span><span
+                      class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 block">Votre
+                      Business</span></h1>
+                  <p class="text-xl text-gray-300 mb-8 max-w-lg" style="opacity: 1; transform: none;">Les meilleures
+                    machines de pressing, blanchisserie et laverie pour transformer votre entreprise.</p>
+                  <div class="flex gap-4" style="opacity: 1; transform: none;"><a href="#"
+                      class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full flex items-center gap-2 shadow-lg shadow-cyan-500/50"
+                      tabindex="0">Découvrir<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg></a><a href="#"
+                      class="border border-white/30 text-white px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors"
+                      tabindex="0" style="transform: none;">Nos Marques</a></div>
+                </div>
+                <div class="relative h-[600px] hidden lg:block hover__bx" style="opacity: 1; transform: none;">
+                  <div
+                    class="absolute top-0 right-0 w-64 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+                    style="opacity: 1; transform: rotate(-5deg);">
+                    <div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-globe w-12 h-12 text-cyan-400 mb-4"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                        <path d="M2 12h20"></path>
+                      </svg>
+                      <h3 class="text-white text-xl mb-2">9 Pays africain</h3>
+                      <p class="text-gray-400 text-sm">Présence Africaine</p>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute top-40 left-12 w-72 hidden lg:block bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+                    style="opacity: 1; transform: rotate(3deg);">
+                    <div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-package w-12 h-12 text-purple-400 mb-4"
+                        aria-hidden="true">
+                        <path
+                          d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                        </path>
+                        <path d="M12 22V12"></path>
+                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                      </svg>
+                      <h3 class="text-white text-xl mb-2">250+ Machines</h3>
+                      <p class="text-gray-400 text-sm">En Stock Permanent</p>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 right-12 w-60 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+                    style="opacity: 1; transform: rotate(-3deg);">
+                    <div class="p-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-award w-12 h-12 text-blue-400 mb-4"
+                        aria-hidden="true">
+                        <path
+                          d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                        </path>
+                        <circle cx="12" cy="8" r="6"></circle>
+                      </svg>
+                      <h3 class="text-white text-xl mb-2">500m² de showroom</h3>
+                      <p class="text-gray-400 text-sm">Espace d'exposition</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute bottom-8 left-1/2 animate-up-down text-white/50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-down w-8 h-8" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
 
-		<div class="col-md-6 col-lg-4 mb-4">
-			<div class="project-card card">
-				<a href="#">
-					<img src="/themes/custom/ces/ces/assets/images/new2.png" class="project-img card-img-top" alt="Projet résidentiel">
-					<div class="card-body">
-						<div class="project-category">Anfa prime hospital</div>
-						<h3 class="project-title">Résidence Horizon</h3>
-						<p class="project-description">Un complexe résidentiel de 80 unités intégrant des espaces verts et des
-														                  équipements communautaires.</p>
-						<div class="see-all-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-								<path d="M15.1891 7.21816L8.03906 14.3682L4.83906 11.1682L5.53906 10.4582L8.03906 12.9582L14.4791 6.50816L15.1891 7.21816ZM9.53906 0.618164C14.7891 0.618164 19.0391 4.86816 19.0391 10.1182C19.0391 15.3682 14.7891 19.6182 9.53906 19.6182C4.28906 19.6182 0.0390625 15.3682 0.0390625 10.1182C0.0390625 4.86816 4.28906 0.618164 9.53906 0.618164ZM9.53906 1.61816C4.84906 1.61816 1.03906 5.42816 1.03906 10.1182C1.03906 14.8082 4.84906 18.6182 9.53906 18.6182C14.2291 18.6182 18.0391 14.8082 18.0391 10.1182C18.0391 5.42816 14.2291 1.61816 9.53906 1.61816Z" fill="white"/>
-							</svg>Terminé en 2021
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="col-md-6 col-lg-4 mb-4">
-			<div class="project-card card">
-				<a href="#">
-					<img src="/themes/custom/ces/ces/assets/images/new3.png" class="project-img card-img-top" alt="Projet urbain">
-					<div class="card-body">
-						<div class="project-category">MH CMNMC</div>
-						<h3 class="project-title">Parc Central</h3>
-						<p class="project-description">Réaménagement de 12 hectares en espace vert public avec installations
-														                  sportives et culturelles.</p>
-						<div class="see-all-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
-								<path d="M15.1891 7.21816L8.03906 14.3682L4.83906 11.1682L5.53906 10.4582L8.03906 12.9582L14.4791 6.50816L15.1891 7.21816ZM9.53906 0.618164C14.7891 0.618164 19.0391 4.86816 19.0391 10.1182C19.0391 15.3682 14.7891 19.6182 9.53906 19.6182C4.28906 19.6182 0.0390625 15.3682 0.0390625 10.1182C0.0390625 4.86816 4.28906 0.618164 9.53906 0.618164ZM9.53906 1.61816C4.84906 1.61816 1.03906 5.42816 1.03906 10.1182C1.03906 14.8082 4.84906 18.6182 9.53906 18.6182C14.2291 18.6182 18.0391 14.8082 18.0391 10.1182C18.0391 5.42816 14.2291 1.61816 9.53906 1.61816Z" fill="white"/>
-							</svg>Terminé en 2021
-						</div>
-					</div>
-				</a>
-			</div>
-		</div> #}
-      	{{ drupal_view('projets','block_1') }}
-	</div>
-
-	<div class="text-center">
-		<a href="#" class="btn btn-discover">
-			{{'Voir tous nos projets'|t}}
-		<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-<rect x="0.5" width="32" height="32" rx="16" fill="white"/>
-<path d="M10.5625 16H22.4375M22.4375 16L17.9844 11.25M22.4375 16L17.9844 20.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-		</i>
-	</a>
-</div></div></section>{{ drupal_entity('block','ces_nospartenaires') }}{# {{ drupal_entity('block','desktech_sectionfivehp') }} #}{% include "@ces/partials/footer.html.twig" %}
+            </section>
+            <section id="services" class="relative py-32 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent"
+                style="transform: skewY(-3deg); transform-origin: left top 0px;"></div>
+              <div class="relative max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20" style="opacity: 1; transform: none;">
+                  <h2 class="text-6xl text-white mb-4">Nos <span
+                      class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Atouts</span>
+                  </h2>
+                  <p class="text-gray-400 text-xl">Excellence et innovation à votre service</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                  <div class="group relative" style="opacity: 1; transform: rotate(-2deg);">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500">
+                    </div>
+                    <div
+                      class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 p-8 h-full">
+                      <div
+                        class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-star w-8 h-8" aria-hidden="true">
+                          <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                          </path>
+                        </svg></div>
+                      <h3 class="text-white text-2xl mb-4">Le Choix</h3>
+                      <p class="text-gray-400 leading-relaxed">Le plus grand stock de machines en Afrique</p>
+                      <div class="h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mt-6" style="width: 0px;">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group relative" style="opacity: 1; transform: rotate(2deg);">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500">
+                    </div>
+                    <div
+                      class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 p-8 h-full">
+                      <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-award w-8 h-8" aria-hidden="true">
+                          <path
+                            d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                          </path>
+                          <circle cx="12" cy="8" r="6"></circle>
+                        </svg></div>
+                      <h3 class="text-white text-2xl mb-4">Garantie</h3>
+                      <p class="text-gray-400 leading-relaxed">Tous nos produits sont garantis</p>
+                      <div class="h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mt-6"
+                        style="width: 0px;"></div>
+                    </div>
+                  </div>
+                  <div class="group relative" style="opacity: 1; transform: rotate(-2deg);">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500">
+                    </div>
+                    <div
+                      class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 p-8 h-full">
+                      <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-users w-8 h-8" aria-hidden="true">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                          <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                        </svg></div>
+                      <h3 class="text-white text-2xl mb-4">Conseil</h3>
+                      <p class="text-gray-400 leading-relaxed">Accompagnement personnalisé</p>
+                      <div class="h-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mt-6" style="width: 0px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="about" class="relative py-32">
+              <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                  <div class="relative" style="opacity: 1; transform: none;">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="col-span-2">
+                        <div class="relative rounded-3xl overflow-hidden h-64 group" style="transform: none;"><img
+                            src="/{{ directory }}/ces/assets/images/img_sc_4.jpg" alt="About"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                          <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60">
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-6 flex flex-col justify-center"
+                        style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-trending-up w-12 h-12 text-white mb-3"
+                          aria-hidden="true">
+                          <path d="M16 7h6v6"></path>
+                          <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                        </svg>
+                        <p class="text-white text-3xl">250+</p>
+                        <p class="text-white/80 text-sm">Machines</p>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl p-6 flex flex-col justify-center"
+                        style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-globe w-12 h-12 text-white mb-3"
+                          aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                          <path d="M2 12h20"></path>
+                        </svg>
+                        <p class="text-white text-3xl">9</p>
+                        <p class="text-white/80 text-sm">Pays africain</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="opacity: 1; transform: none;">
+                    <div class="inline-block mb-6">
+                      <div
+                        class="bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 text-cyan-300 text-sm">
+                        Qui sommes-nous ?</div>
+                    </div>
+                    <h2 class="text-5xl text-white mb-6 leading-tight">Leader de l'équipement<span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+                        professionnel</span></h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">Cleaning Equipment Service est un
+                      importateur/exportateur, distributeur et installateur agréé de plusieurs marques leaders au niveau
+                      international.</p>
+                    <p class="text-gray-400 leading-relaxed mb-8">Spécialisés dans les machines de pressing,
+                      blanchisserie et laverie, nous offrons des solutions adaptées pour un usage domestique, hôtelier
+                      et professionnel à travers l'Afrique.</p><a href="#"
+                      class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full flex items-center gap-2"
+                      style="transform: none;">En savoir plus<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5"
+                        aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="relative py-32 overflow-hidden">
+              <div class="absolute inset-0"><img src="/_assets/v11/b4940ebd93d46135fe343f0c1eef423d644bc38f.png"
+                  alt="Background" class="w-full h-full object-cover opacity-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/90 via-blue-900/90 to-purple-900/90"></div>
+              </div>
+              <div class="relative z-10 max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8">
+                  <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 text-center group"
+                    style="opacity: 1; transform: none;">
+                    <div class="text-cyan-400 mb-4 flex justify-center group-hover:scale-110 transition-transform"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-package w-12 h-12" aria-hidden="true">
+                        <path
+                          d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                        </path>
+                        <path d="M12 22V12"></path>
+                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                      </svg></div>
+                    <div class="text-6xl text-white mb-2" style="transform: none;">250</div>
+                    <p class="text-gray-300 uppercase tracking-wider text-sm">Machines en Stock</p>
+                  </div>
+                  <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 text-center group"
+                    style="opacity: 1; transform: none;">
+                    <div class="text-cyan-400 mb-4 flex justify-center group-hover:scale-110 transition-transform"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-globe w-12 h-12" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                        <path d="M2 12h20"></path>
+                      </svg></div>
+                    <div class="text-6xl text-white mb-2" style="transform: none;">2</div>
+                    <p class="text-gray-300 uppercase tracking-wider text-sm">Pays Africains</p>
+                  </div>
+                  <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 text-center group"
+                    style="opacity: 1; transform: none;">
+                    <div class="text-cyan-400 mb-4 flex justify-center group-hover:scale-110 transition-transform"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-award w-12 h-12" aria-hidden="true">
+                        <path
+                          d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                        </path>
+                        <circle cx="12" cy="8" r="6"></circle>
+                      </svg></div>
+                    <div class="text-6xl text-white mb-2" style="transform: none;">500m²</div>
+                    <p class="text-gray-300 uppercase tracking-wider text-sm">Showrooms</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="relative py-20 pb-12">
+              <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                  <div class="relative" style="opacity: 1; transform: none;"><img
+                      src="/{{ directory }}/ces/assets/images/img_sc_5.jpg" alt="Machine lavage chaussure"
+                      class="w-full h-auto transition-transform duration-700" style="transform: none;"></div>
+                  <div style="opacity: 1; transform: none;">
+                    <div class="inline-block mb-6">
+                      <div
+                        class="bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 text-cyan-300 text-sm">
+                        Exclusivité Maroc</div>
+                    </div>
+                    <h2 class="text-5xl text-white mb-6 leading-tight">Machine lavage<span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+                        chaussure</span></h2>
+                    <p class="text-cyan-400 text-xl mb-6">Nous sommes les seuls à commercialiser cette technologie !</p>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">Machine à laver les chaussures
+                      professionnelle<br>Optimisez votre service de pressing et de blanchisserie en intégrant le lavage
+                      professionnel des chaussures. Notre machine, compacte et ultra-efficace, offre un nettoyage en
+                      profondeur sans endommager les matériaux.</p>
+                    <div class="space-y-4 mb-8">
+                      <div
+                        class="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+                        style="opacity: 1; transform: none;">
+                        <div
+                          class="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center mt-0.5">
+                          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                          </svg></div>
+                        <p class="text-gray-200 leading-relaxed"><span class="text-cyan-300">Nettoyage délicat :</span>
+                          Adapté à tous types de chaussures (cuir, toile, sport).</p>
+                      </div>
+                      <div
+                        class="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+                        style="opacity: 1; transform: none;">
+                        <div
+                          class="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center mt-0.5">
+                          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                          </svg></div>
+                        <p class="text-gray-200 leading-relaxed"><span class="text-cyan-300">Rentabilité maximale
+                            :</span> Nouveau service à haute valeur ajoutée pour vos clients.</p>
+                      </div>
+                      <div
+                        class="flex items-start gap-3 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+                        style="opacity: 1; transform: none;">
+                        <div
+                          class="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center mt-0.5">
+                          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                          </svg></div>
+                        <p class="text-gray-200 leading-relaxed"><span class="text-cyan-300">Disponibilité immédiate
+                            :</span> Stock au Maroc, sans délai d'importation.</p>
+                      </div>
+                    </div><a href="#"
+                      class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
+                      tabindex="0">Demander un démo</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="news" class="relative py-16">
+              <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20" style="opacity: 1; transform: none;">
+                  <h2 class="text-6xl text-white mb-4">Nos <span
+                      class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Produits</span>
+                  </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div class="group relative rounded-3xl overflow-hidden h-96" style="opacity: 1; transform: none;"><img
+                      src="/{{ directory }}/ces/assets/images/ar1.jpg" alt="Produits Neufs"
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                      <div
+                        class="inline-block bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full px-4 py-1 text-cyan-300 text-sm mb-4">
+                        Excellence</div>
+                      <h3 class="text-white text-3xl mb-4">Produits Neufs</h3><a href="#"
+                        class="text-cyan-400 flex items-center gap-2 group/btn">Découvrir<svg
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-arrow-right w-5 h-5 group-hover/btn:translate-x-2 transition-transform"
+                          aria-hidden="true">
+                          <path d="M5 12h14"></path>
+                          <path d="m12 5 7 7-7 7"></path>
+                        </svg></a>
+                    </div>
+                  </div>
+                  <div class="group relative rounded-3xl overflow-hidden h-96" style="opacity: 1; transform: none;"><img
+                      src="/{{ directory }}/ces/assets/images/ar2.jpg" alt="Produits Rénovés"
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                      <div
+                        class="inline-block bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full px-4 py-1 text-cyan-300 text-sm mb-4">
+                        Innovation</div>
+                      <h3 class="text-white text-3xl mb-4">Produits Rénovés</h3><a  href="#"
+                        class="text-cyan-400 flex items-center gap-2 group/btn">Découvrir<svg
+                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="lucide lucide-arrow-right w-5 h-5 group-hover/btn:translate-x-2 transition-transform"
+                          aria-hidden="true">
+                          <path d="M5 12h14"></path>
+                          <path d="m12 5 7 7-7 7"></path>
+                        </svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="contact" class="relative py-32 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700"></div>
+              <div class="absolute inset-0 opacity-30"
+                style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px); background-size: 40px 40px;">
+              </div>
+              <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+                <div style="opacity: 1; transform: none;">
+                  <h2 class="text-6xl text-white mb-6">Prêt à commencer ?</h2>
+                  <p class="text-white/80 text-xl mb-12 max-w-2xl mx-auto">Contactez-nous pour profiter de nos offres
+                    exclusives et transformer votre business</p><a href="#"
+                    class="bg-white text-blue-600 px-12 py-5 rounded-full text-lg shadow-2xl" tabindex="0"
+                    style="box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; transform: none;">Contactez-nous</a>
+                </div>
+              </div>
+            </section>
+{% include "@ces/partials/footer.html.twig" %}

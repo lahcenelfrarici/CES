@@ -36,3 +36,34 @@
 .animate-up-down {
   animation: moveUpDown 1.5s ease-in-out infinite;
 }
+/* Drupal  */
+.items__menu_principe .group:last-child {
+  display: block;
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-gradient-to: var(--color-blue-600);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  padding-inline: calc(var(--spacing) * 6);
+  --tw-gradient-from: var(--color-cyan-500);
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  --tw-gradient-position: to right in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+  border-radius: 3.40282e38px;
+  padding-block: calc(var(--spacing) * 2);
+}
+.md\:flex.items-center.gap-8.items__menu_principe {
+  padding-left: calc(var(--spacing) * 8);
+}
+.items__menu_principe .group:last-child span {
+  opacity: 0;
+}
+#about a {
+  width: fit-content;
+}
+.items__menu_principe .text-cyan-400 {
+  color: var(--color-cyan-400);
+}
+.items__menu_principe .text-cyan-400 span {
+  width: 100%;
+}
