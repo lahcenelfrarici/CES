@@ -67,3 +67,18 @@
 .items__menu_principe .text-cyan-400 span {
   width: 100%;
 }
+
+.list__tabs_sc button {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  gap: 0 10px;
+}
+
+.list__tabs_sc button svg {
+  height: auto;
+}
+.list__tabs_sc button.active {
+  background: var(--color-blue-600);
+  color: #fff;
+}

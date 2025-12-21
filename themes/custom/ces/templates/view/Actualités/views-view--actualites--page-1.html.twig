@@ -1,0 +1,174 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+
+<section class="relative min-h-[60vh] flex items-center justify-center pt-32 pb-20">
+	<div class="absolute inset-0 overflow-hidden">
+		<div style="transform: none;" class="absolute inset-0"><img src="./assets/images/030c2c7d57f329f816f994548be0cbbc56d9bfed." alt="Hero" class="w-full h-full object-cover opacity-20">
+			<div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+		</div>
+	</div>
+	<div style="opacity: 1;" class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+		<div class="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-full px-6 py-3 mb-8" style="opacity: 1; transform: none;">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper w-5 h-5 text-cyan-400" aria-hidden="true">
+				<path d="M15 18h-5"></path>
+				<path d="M18 14h-8"></path>
+				<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"></path>
+				<rect width="8" height="4" x="10" y="6" rx="1"></rect>
+			</svg>
+			<span class="text-cyan-300">Actualités &amp; Conseils</span>
+		</div>
+		<h1 class="text-6xl md:text-7xl mb-8 leading-tight" style="opacity: 1; transform: none;">
+			<span class="text-white block mb-2">Actualités</span>
+			<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 block">&amp;
+				                    Expertise</span>
+		</h1>
+		<p class="text-xl text-gray-300 max-w-3xl mx-auto" style="opacity: 1; transform: none;">Découvrez nos
+			                  derniers articles, conseils d'experts et actualités du secteur de l'équipement professionnel</p>
+	</div>
+	<div class="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+</section>
+<section class="relative py-32 act_bs">
+	<div class="max-w-7xl mx-auto px-6">
+		<div class="text-center mb-16" style="opacity: 1; transform: none;">
+			<p class="text-gray-400">
+				<span class="text-cyan-400 text-2xl">2</span>
+				articles récents</p>
+		</div>
+		<div class="grid md:grid-cols-2 gap-8">
+    	{{ rows }}
+			{# <article class="./assets/images/ cursor-pointer" style="opacity: 1; transform: none;">
+				<div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+				<div class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
+					<div class="relative h-80 overflow-hidden"><img src="./assets/images/56436bfe5dd45c6754bd8c7f4f0621b4bb8590f5.jpg" alt="L'Impact de la Qualité de l'Équipement sur la Qualité du Service en Pressing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+						<div class="absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg" style="transform: none;">
+							<div class="text-center">
+								<div class="text-white text-xs">15</div>
+								<div class="text-white text-[10px] opacity-80">09/2023</div>
+							</div>
+						</div>
+						<div class="absolute top-6 left-6">
+							<div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+								<span class="text-white text-sm">Excellence</span>
+							</div>
+						</div>
+					</div>
+					<div class="p-8">
+						<h3 class="text-white text-2xl mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-600 transition-all duration-300">
+							L'Impact de la Qualité de l'Équipement sur la Qualité du Service en Pressing</h3>
+						<p class="text-gray-300 mb-6 leading-relaxed line-clamp-3">En tant que propriétaire ou
+							                          gestionnaire d'un service de pressing, vous comprenez l'importance de fournir des services de
+							                          haute qualité à vos clients. Cependant, un aspect souvent sous-estimé de cette équation est
+							                          l'équipement que vous utilisez...</p>
+						<div class="flex items-center justify-between">
+							<div class="flex items-center gap-2 text-gray-400 text-sm">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-4 h-4" aria-hidden="true">
+									<path d="M8 2v4"></path>
+									<path d="M16 2v4"></path>
+									<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+									<path d="M3 10h18"></path>
+								</svg>
+								<span>Ajoutée le 15/09/2023</span>
+							</div>
+							<a href="#" class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-full shadow-lg" tabindex="0" style="transform: none;">
+								<span class="text-sm uppercase tracking-wider">Lire la
+									                              suite</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+									<path d="M5 12h14"></path>
+									<path d="m12 5 7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+						<div class="h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mt-6" style="width: 0px;"></div>
+					</div>
+				</div>
+			</article>
+			<article class="./assets/images/ cursor-pointer" style="opacity: 1; transform: none;">
+				<div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+				<div class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
+					<div class="relative h-80 overflow-hidden"><img src="./assets/images/d3e82f41a6c924cced85566574a00bb34550e385.jpg" alt="Conseils Essentiels Pour Choisir Le Meilleur Équipement De Buanderie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+						<div class="absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg" style="transform: none;">
+							<div class="text-center">
+								<div class="text-white text-xs">12</div>
+								<div class="text-white text-[10px] opacity-80">09/2023</div>
+							</div>
+						</div>
+						<div class="absolute top-6 left-6">
+							<div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+								<span class="text-white text-sm">Conseils</span>
+							</div>
+						</div>
+					</div>
+					<div class="p-8">
+						<h3 class="text-white text-2xl mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-600 transition-all duration-300">
+							Conseils Essentiels Pour Choisir Le Meilleur Équipement De Buanderie</h3>
+						<p class="text-gray-300 mb-6 leading-relaxed line-clamp-3">L'efficacité et la qualité de
+							                          l'équipement de buanderie sont cruciales pour assurer le bon fonctionnement d'une installation
+							                          de blanchisserie ou de pressing. Choisir le matériel approprié peut augmenter
+							                          significativement la qualité des services offerts...</p>
+						<div class="flex items-center justify-between">
+							<div class="flex items-center gap-2 text-gray-400 text-sm">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-4 h-4" aria-hidden="true">
+									<path d="M8 2v4"></path>
+									<path d="M16 2v4"></path>
+									<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+									<path d="M3 10h18"></path>
+								</svg>
+								<span>Ajoutée le 12/09/2023</span>
+							</div>
+							<a href="#" class="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg" tabindex="0" style="transform: none;">
+								<span class="text-sm uppercase tracking-wider">Lire la
+									                              suite</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+									<path d="M5 12h14"></path>
+									<path d="m12 5 7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+						<div class="h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mt-6" style="width: 0px;"></div>
+					</div>
+				</div>
+			</article> #}
+		</div>
+	</div>
+</section>

@@ -31,34 +31,75 @@
 
             <section class="relative py-32">
               <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-wrap justify-center gap-4 mb-16">
-
+               <div class="flex flex-wrap justify-center gap-4 mb-16 list__tabs_sc">
                   <button data-filter="all"
-                    class="filter-btn active px-6 py-3 rounded-full transition-all bg-white/5 border border-white/10">
-                    Tous
+                    class="filter-btn active px-6 py-3 rounded-full transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white border border-white/10 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="w-4 h-4" aria-hidden="true">
+                      <path d="M10 12h4"></path>
+                      <path d="M10 8h4"></path>
+                      <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                      <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                      <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    <span>Tous</span>
                   </button>
 
-                  <button data-filter="clinique"
-                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10">
-                    Cliniques
+                  <button data-filter="cliniques"
+                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="w-4 h-4" aria-hidden="true">
+                      <path d="M10 12h4"></path>
+                      <path d="M10 8h4"></path>
+                      <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                      <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                      <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                    </svg>
+                    <span>Cliniques</span>
                   </button>
 
                   <button data-filter="hotel"
-                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10">
-                    Hôtels
+                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="w-4 h-4" aria-hidden="true">
+                      <path d="M10 22v-6.57"></path>
+                      <path d="M12 11h.01"></path>
+                      <path d="M12 7h.01"></path>
+                      <path d="M14 15.43V22"></path>
+                      <path d="M15 16a5 5 0 0 0-6 0"></path>
+                      <path d="M16 11h.01"></path>
+                      <path d="M16 7h.01"></path>
+                      <path d="M8 11h.01"></path>
+                      <path d="M8 7h.01"></path>
+                      <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                    </svg>
+                    <span>Hôtels</span>
                   </button>
 
                   <button data-filter="maroc"
-                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10">
-                    Maroc
+                    class="filter-btn px-6 py-3 rounded-full transition-all bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="w-4 h-4" aria-hidden="true">
+                      <path
+                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                      </path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Maroc</span>
                   </button>
-
                 </div>
 
                 <!-- ================= CONTENT ================= -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                  <div class="item transition-all duration-500" data-category="clinique maroc">
+	{{ drupal_view('nos_references','block_1') }}
+  	{# {{ drupal_view('nos_references','block_2') }}
+    	{{ drupal_view('nos_references','block_3') }}
+      	{{ drupal_view('nos_references','block_4') }} #}
+                  {# <div class="item transition-all duration-500" data-category="clinique maroc">
                     <div class="bg-white/5 p-6 rounded-xl border border-white/10">
                       <h3 class="text-xl font-bold">Clinique Casablanca</h3>
                       <p class="text-gray-400">Clinique • Maroc</p>
@@ -91,7 +132,7 @@
                       <h3 class="text-xl font-bold">Service Rabat</h3>
                       <p class="text-gray-400">Maroc</p>
                     </div>
-                  </div>
+                  </div> #}
 
                 </div>
 
