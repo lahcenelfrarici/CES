@@ -82,3 +82,11 @@
   background: var(--color-blue-600);
   color: #fff;
 }
+
+.body__acc p {
+  color: var(--color-gray-300);
+}
+.act_bs article div {
+  z-index: 9;
+  position: relative;
+}
