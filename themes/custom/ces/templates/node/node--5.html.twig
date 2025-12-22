@@ -25,7 +25,7 @@
               <div class="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
               <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
             </section>
-            <section class="relative py-20">
+            <section class="relative py-20 contact_form_all">
               <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-12">
                   <div style="opacity: 1; transform: none;">
@@ -35,7 +35,8 @@
                           class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Demandez Un
                           Devis</span></h2>
                       <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mb-8"></div>
-                      <form class="space-y-6">
+                      		{{ drupal_entity('block','ces_webform') }}
+                      {# <form class="space-y-6">
                         <div><input type="text" placeholder="Nom &amp; prénom"
                             class="w-full bg-slate-900/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
                             value=""></div>
@@ -58,7 +59,7 @@
                             </path>
                             <path d="m21.854 2.147-10.94 10.939"></path>
                           </svg></button>
-                      </form>
+                      </form> #}
                     </div>
                   </div>
                   <div class="space-y-6" style="opacity: 1; transform: none;">

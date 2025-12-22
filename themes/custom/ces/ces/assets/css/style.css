@@ -90,3 +90,9 @@
   z-index: 9;
   position: relative;
 }
+.contact_form_all #edit-message {
+  width: 100%;
+}
+.contact_form_all button {
+  cursor: pointer;
+}
