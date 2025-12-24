@@ -33,7 +33,7 @@
     });
 
     // Filter buttons (vanilla JS is OK here)
-const buttons = document.querySelectorAll('.filter-btn');
+    const buttons = document.querySelectorAll('.filter-btn');
     const items = document.querySelectorAll('.item');
 
     buttons.forEach(btn => {
@@ -71,5 +71,31 @@ const buttons = document.querySelectorAll('.filter-btn');
       });
     });
 
+  });
+  jQuery(document).ready(function ($) {
+    $('button:contains("Produits")').on('click', function () {
+      var $submenu = $(this).next('.ml-4.mt-2.space-y-2');
+      var $arrow = $(this).find('svg');
+
+      // Close all other submenus except current one
+      $('.ml-4.mt-2.space-y-2').not($submenu).hide();
+      $('.ml-4.mt-2.space-y-2').not($submenu).prev('button').find('svg').css('transform', 'rotate(0deg)');
+
+      // Toggle current submenu
+      $submenu.toggle(300);
+
+      // Toggle arrow rotation
+      if ($submenu.is(':visible')) {
+        $arrow.css({
+          'transform': 'rotate(180deg)',
+          'transition': 'transform 0.3s'
+        });
+      } else {
+        $arrow.css({
+          'transform': 'rotate(0deg)',
+          'transition': 'transform 0.3s'
+        });
+      }
+    });
   });
 })(jQuery);
