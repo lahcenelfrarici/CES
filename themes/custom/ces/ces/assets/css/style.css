@@ -1,33 +1,40 @@
-
 .scrolled_header .group {
   display: none;
 }
-.scrolled_header nav >div {
+
+.scrolled_header nav>div {
   background-color: color-mix(in oklab, var(--color-slate-900) 80%, transparent);
   width: max-content;
   padding-inline: calc(var(--spacing) * 8);
   padding-block: calc(var(--spacing) * 3);
   border-radius: 3.40282e38px;
 }
+
 .scrolled_header nav {
   width: auto;
 }
+
 .scrolled_header img {
   height: calc(var(--spacing) * 10);
 }
-.hover__bx > div:hover {
+
+.hover__bx>div:hover {
   transform: translateY(-10px) !important;
 }
-.hover__bx > div {
-  transition: all .4s cubic-bezier(.65,.05,.36,1);
+
+.hover__bx>div {
+  transition: all .4s cubic-bezier(.65, .05, .36, 1);
 }
+
 @keyframes moveUpDown {
   0% {
     transform: translate(-50%, 0);
   }
+
   50% {
     transform: translate(-50%, -12px);
   }
+
   100% {
     transform: translate(-50%, 0);
   }
@@ -36,6 +43,7 @@
 .animate-up-down {
   animation: moveUpDown 1.5s ease-in-out infinite;
 }
+
 /* Drupal  */
 .items__menu_principe .group:last-child {
   display: block;
@@ -52,18 +60,23 @@
   border-radius: 3.40282e38px;
   padding-block: calc(var(--spacing) * 2);
 }
+
 .md\:flex.items-center.gap-8.items__menu_principe {
   padding-left: calc(var(--spacing) * 8);
 }
+
 .items__menu_principe .group:last-child span {
   opacity: 0;
 }
+
 #about a {
   width: fit-content;
 }
+
 .items__menu_principe .text-cyan-400 {
   color: var(--color-cyan-400);
 }
+
 .items__menu_principe .text-cyan-400 span {
   width: 100%;
 }
@@ -78,6 +91,7 @@
 .list__tabs_sc button svg {
   height: auto;
 }
+
 .list__tabs_sc button.active {
   background: var(--color-blue-600);
   color: #fff;
@@ -86,13 +100,37 @@
 .body__acc p {
   color: var(--color-gray-300);
 }
+
 .act_bs article div {
   z-index: 9;
   position: relative;
 }
+
 .contact_form_all #edit-message {
   width: 100%;
 }
+
 .contact_form_all button {
   cursor: pointer;
 }
+
+header  div.relative.group:hover .hidden {
+  display: block;
+  width: max-content;
+  padding: 0;
+  padding: 5px 15px 5px 5px;
+  background: #171c31;
+}
+
+header .relative.group .hidden a {
+  width: 100%;
+
+  border-radius: 8px;
+}
+
+/* header .relative.group > a {
+  margin-bottom: 27px;
+} */
+/* header div.relative.group {
+  margin-bottom: -30px;
+} */

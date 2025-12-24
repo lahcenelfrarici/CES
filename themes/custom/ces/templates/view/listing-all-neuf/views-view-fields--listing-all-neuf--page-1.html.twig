@@ -1,0 +1,25 @@
+{# {{ fields.title.content }}
+<img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="L'Impact de la Qualité de l'Équipement sur la Qualité du Service en Pressing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+{{ fields.field_new_listing_paragraph.content }}
+<div class="testtttttttt"></div>
+{% set materiel_neuf = row._entity %}
+{% if materiel_neuf.field_new_listing_paragraph is not empty %}
+	{{ materiel_neuf.field_new_listing_paragraph|length }}
+{% endif %} #}
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% set materiel_neuf = row._entity %}
+{# {{dump(materiel_neuf.field_new_listing_paragraph|length)}} #}
+{% if materiel_neuf.field_new_listing_paragraph|length == 1 %}
+{{ fields.title.content }}
+	google.com
+{% else %}
+ {{ fields.title.content }}
+
+	<a href="{{ path('entity.node.canonical', {'node':row._entity.nid.value}) }}">
+
+		Voir le détail
+	</a>
+{% endif %}

@@ -1,0 +1,13 @@
+<a href="{{ path('entity.node.canonical', {'node':row._entity.nid.value}) }}" class="w-full group" style="transform: none;">
+	<div class="flex gap-4 p-4 bg-slate-800/50 rounded-xl border border-transparent hover:border-cyan-500/50 transition-all">
+		<div class="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0"><img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="Article" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+		</div>
+		<div class="flex-1 text-left">
+			<p class="text-xs text-cyan-400 uppercase tracking-wider mb-1">{{'Conseils Essentiels'|t}}</p>
+			<p class="text-sm text-white/70 group-hover:text-white transition-colors line-clamp-2">
+				{{ fields.title.content }}</p>
+		</div>
+	</div>
+</a>
+
+
