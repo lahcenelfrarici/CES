@@ -137,3 +137,6 @@ header .relative.group .hidden a {
 #sc__list_views {
   padding-bottom: 60px;
 }
+.body__text p {
+  color: var(--color-gray-300);
+}

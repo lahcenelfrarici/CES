@@ -1,0 +1,102 @@
+{# {{ fields.title.content }}
+<img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="L'Impact de la Qualité de l'Équipement sur la Qualité du Service en Pressing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+{{ fields.field_new_listing_paragraph.content }}
+<div class="testtttttttt"></div>
+{% set materiel_renove = row._entity %}
+{% if materiel_renove.field_new_listing_paragraph is not empty %}
+	{{ materiel_renove.field_new_listing_paragraph|length }}
+{% endif %} #}
+{# <br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+
+ #}
+
+{# {% set materiel_renove = row._entity %}
+
+{% if materiel_renove.field_new_listing_paragraph|length == 1 %}
+
+  {% if materiel_renove.field_pdf.entity %}
+    {% set pdf_url = file_url(materiel_renove.field_pdf.entity.fileuri) %}
+  {% else %}
+    {% set pdf_url = '#' %}
+  {% endif %}
+
+  <a href="{{ pdf_url }}" download class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+    <div class="relative h-64 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
+      <img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="Machine à sec" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      <div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+        <span class="text-white text-sm">{{'Neuf'|t}}</span>
+      </div>
+    </div>
+    <div class="relative p-6">
+      <h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">{{ fields.title.content }}</h3>
+      <div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+        <span class="text-sm">{{'Télécharger PDF'|t}}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+  </a>
+
+{% else %}
+
+		<a href="{{ path('entity.node.canonical', {'node':row._entity.nid.value}) }}" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+			<div class="relative h-64 overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="Machine à sec" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+				<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+					<span class="text-white text-sm">{{'Neuf'|t}}</span>
+				</div>
+			</div>
+			<div class="relative p-6">
+				<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">{{ fields.title.content }}
+				</h3>
+				<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+					<span class="text-sm">{{'Voir les détails'|t}}</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+						<path d="M5 12h14"></path>
+						<path d="m12 5 7 7-7 7"></path>
+					</svg>
+				</div>
+			</div>
+			<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+		</a>
+
+{% endif %} #}
+
+{% set materiel_renove = row._entity %}
+
+
+  {# When length is 1, link to PDF file for download #}
+  {% if materiel_renove.field_pdf.entity %}
+    {% set pdf_url = file_url(materiel_renove.field_pdf.entity.fileuri) %}
+  {% else %}
+    {% set pdf_url = '#' %}
+  {% endif %}
+    {% if paragraph.field_plus_detail.0.entity %}
+        {% set detail_node = paragraph.field_plus_detail.0.entity %}
+        {% set node_url = path('entity.node.canonical', {'node': detail_node.id()}) %}
+      {% endif %}
+  <a href="{{ path('entity.node.canonical', {'node':row._entity.nid.value}) }}"  class="group relative bg-gradient-to-br from-slate-900/50 to-emerald-900/30 backdrop-blur-sm border border-emerald-500/20 rounded-3xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+    <div class="relative h-64 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
+      <img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="Machine à sec" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+<div class="absolute top-4 right-4 z-20 bg-emerald-500/90 backdrop-blur-sm px-4 py-2 rounded-full"><span class="text-white text-sm">{{'Rénové'|t}}</span></div>
+    </div>
+    <div class="relative p-6">
+      <h3 class="text-2xl text-white mb-4 group-hover:text-emerald-400 transition-colors">
+        {{ materiel_renove.title.value }}
+      </h3>
+      <div class="text-emerald-400 flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+        <span class="text-sm">{{'Voir les détails'|t}}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+  </a>
+

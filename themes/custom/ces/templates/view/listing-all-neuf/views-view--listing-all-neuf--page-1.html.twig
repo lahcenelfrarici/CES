@@ -37,9 +37,9 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+<div class="relative min-h-screen pt-32 pb-20">
 
-
-<div class="max-w-7xl mx-auto px-6 mb-16 relative z-10 top___espace" >
+<div class="max-w-7xl mx-auto px-6 mb-16 relative z-10 top___espace">
 	<div class="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-full px-6 py-3 mb-8" style="opacity: 1; transform: none;">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package w-5 h-5 text-cyan-400" aria-hidden="true">
 			<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
@@ -52,210 +52,211 @@
 	<h1 class="text-6xl md:text-7xl mb-8 leading-tight" style="opacity: 1; transform: none;">
 		<span class="text-white block mb-2">Équipements Neufs</span>
 		<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">Dernière
-						                    Génération</span>
+									                    Génération</span>
 	</h1>
 	<p class="text-xl text-gray-300 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre gamme
-				                  complète d'équipements neufs de pressing, blanchisserie et laverie. Technologies de pointe, garanties
-				                  complètes et performance optimale.</p>
+						                  complète d'équipements neufs de pressing, blanchisserie et laverie. Technologies de pointe, garanties
+						                  complètes et performance optimale.</p>
 </div>
 <div class="max-w-7xl mx-auto px-6 relative z-10" id="sc__list_views">
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 		{{ rows }}
 
 		{# <a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/685fee9aaa74c08cbcf1fcf2a2e71c505c262a81.png" alt="Machine à laver" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Machine à laver
-						</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/6f86c407abeee560e2abe555003fe83fa26a0e3c.png" alt="Séchoir" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Séchoir</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/e291c3ea85115ca244af77bb77564607d15ae009.png" alt="Table de repassage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Table de
-							                        repassage</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/abddaededc180b5d02ef1d3fc554280e98d2050b.png" alt="Table de détachage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Table de
-							                        détachage</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/6c74c77e3253950e659e0c99e52825888efff9a1.png" alt="Cabane de détachage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Cabane de
-							                        détachage</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/3d8e522607faf78bc005ef7519b2eaa97910a64c.png" alt="Convoyeurs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Convoyeurs</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/949ba6dc56dcee0f1947c6a4803ed1d43533abe4.png" alt="Emballeur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Emballeur</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/1b5c19b7d7ab64d1a1fc8ddfca5320a4d2da1f3d.png" alt="Presse" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Presse</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/03d37cc504e75da4a1cbd9f294cc5b64a2d1f843.png" alt="Calendes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Calendes</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a>
-				<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
-					<div class="relative h-64 overflow-hidden">
-						<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/793740769760bb55fbde826ff8dac54be8f0097b.jpg" alt="Machine lavage chaussure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-						<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
-							<span class="text-white text-sm">Neuf</span>
-						</div>
-					</div>
-					<div class="relative p-6">
-						<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Machine lavage
-							                        chaussure</h3>
-						<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
-							<span class="text-sm">Voir les détails</span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
-								<path d="M5 12h14"></path>
-								<path d="m12 5 7 7-7 7"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-				</a> #}
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/685fee9aaa74c08cbcf1fcf2a2e71c505c262a81.png" alt="Machine à laver" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Machine à laver
+								</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/6f86c407abeee560e2abe555003fe83fa26a0e3c.png" alt="Séchoir" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Séchoir</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/e291c3ea85115ca244af77bb77564607d15ae009.png" alt="Table de repassage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Table de
+									                        repassage</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/abddaededc180b5d02ef1d3fc554280e98d2050b.png" alt="Table de détachage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Table de
+									                        détachage</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/6c74c77e3253950e659e0c99e52825888efff9a1.png" alt="Cabane de détachage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Cabane de
+									                        détachage</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/3d8e522607faf78bc005ef7519b2eaa97910a64c.png" alt="Convoyeurs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Convoyeurs</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/949ba6dc56dcee0f1947c6a4803ed1d43533abe4.png" alt="Emballeur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Emballeur</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/1b5c19b7d7ab64d1a1fc8ddfca5320a4d2da1f3d.png" alt="Presse" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Presse</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/03d37cc504e75da4a1cbd9f294cc5b64a2d1f843.png" alt="Calendes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Calendes</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a>
+						<a href="#" class="group relative bg-gradient-to-br from-slate-900/50 to-blue-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+							<div class="relative h-64 overflow-hidden">
+								<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/793740769760bb55fbde826ff8dac54be8f0097b.jpg" alt="Machine lavage chaussure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+								<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<span class="text-white text-sm">Neuf</span>
+								</div>
+							</div>
+							<div class="relative p-6">
+								<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Machine lavage
+									                        chaussure</h3>
+								<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<span class="text-sm">Voir les détails</span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m12 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+						</a> #}
 	</div>
+</div>
 </div>

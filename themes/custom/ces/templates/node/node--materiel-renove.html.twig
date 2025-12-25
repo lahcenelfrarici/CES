@@ -1,0 +1,113 @@
+{# <img src="{{ file_url(node.field_image.entity.uri.value) }}" alt="Équipement de pressing de qualité" class="w-full h-auto group-hover:scale-105 transition-transform duration-700"> #}
+{# <div class="node-full-content">
+
+	{% if content.field_new_listing_paragraph %}
+		{{ content.field_new_listing_paragraph }}
+	{% endif %}
+
+</div> #}
+
+
+	<div class="relative min-h-screen pt-32 pb-20"> <div class="absolute inset-0 overflow-hidden pointer-events-none">
+		<div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+		<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+	</div>
+	<div class="max-w-7xl mx-auto px-6 mb-16 relative z-10">
+		<button class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 mb-8 transition-colors" style="opacity: 1; transform: none;">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left w-5 h-5" aria-hidden="true">
+				<path d="m12 19-7-7 7-7"></path>
+				<path d="M19 12H5"></path>
+			</svg>
+			<span>{{'Retour aux catégories'|t}}</span>
+		</button>
+		<div class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full px-6 py-3 mb-8" style="opacity: 1; transform: none;">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench w-5 h-5 text-emerald-400" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
+			<span class="text-emerald-300">{{'Matériel Rénové'|t}}</span>
+		</div>
+		<h1 class="text-6xl md:text-7xl mb-8 leading-tight" style="opacity: 1; transform: none;">
+			<span class="text-white">{{ node.title.value }}</span>
+		</h1>
+		<p class="text-xl text-gray-300 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre
+																		                  sélection de machine à sec neufs avec garantie complète.</p>
+	</div>
+	<div class="max-w-7xl mx-auto px-6 relative z-10">
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{#  #}
+
+			{% if content.field_new_listing_paragraph %}
+				{% for item in content.field_new_listing_paragraph|filter((v, k) => k|first != '#') %}
+					{% if item['#paragraph'] %}
+						{% set paragraph = item['#paragraph'] %}
+
+						{# Get title from field_titre #}
+						{% set title = paragraph.field_titre.value %}
+
+						{# Get PDF URL from field_pdf with target_id = 20 #}
+
+							{% set pdf_file = paragraph.field_pdf.0.entity %}
+							{% set pdf_url = file_url(pdf_file.uri.value) %}
+							{% set url_detail = paragraph.field_plus_detail.0.entity %}
+							{#  #}
+							{% set node_url = url_detail.value.0 %}
+							{# {{dump(url_detail)}} #}
+							{# {{ pdf_url }} #}
+								{% if paragraph.field_plus_detail.0.entity %}
+								{% set detail_node = paragraph.field_plus_detail.0.entity %}
+							{% set node_url = path('entity.node.canonical', {'node': detail_node.id()}) %}
+							{% endif %}
+								<a href="{{ node_url }}" class="group relative bg-gradient-to-br from-slate-900/50 to-emerald-900/30 backdrop-blur-sm border border-emerald-500/20 rounded-3xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 cursor-pointer"> <div class="relative h-64 overflow-hidden">
+									<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
+
+									{# Get image from field_image with target_id = 19 #}
+									{% if paragraph.field_image.0.entity %}
+										{% set image = paragraph.field_image.0.entity %}
+										<img src="{{ file_url(image.uri.value) }}" alt="{{ paragraph.field_image.0.alt }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+									{% endif %}
+
+									<div class="absolute top-4 right-4 z-20 bg-emerald-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+										<span class="text-white text-sm">{{'Rénové'|t}}</span>
+									</div>
+								</div>
+
+								<div class="relative p-6">
+									<h3 class="text-2xl text-white mb-4 group-hover:text-emerald-400 transition-colors">
+										{{ title }}
+									</h3>
+									<div class="flex items-center gap-2 text-emerald-400 group-hover:gap-3 transition-all">
+										<span class="text-sm">{{'Voir les détails'|t}}</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+									</div>
+								</div>
+
+								<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+							</a>
+
+
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
+		{# <div class="group relative bg-gradient-to-br from-slate-900/50 to-cyan-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" style="opacity: 1; transform: none;">
+															<div class="relative h-64 overflow-hidden">
+																<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div><img src="./assets/images/71068c686f946e86907dba896b2f9c6326458d58.png" alt="Machine à sec - Modèle Standard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+																<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+																	<span class="text-white text-sm">Neuf</span>
+																</div>
+															</div>
+															<div class="relative p-6">
+																<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">Machine à sec -
+																	                        Modèle Standard</h3>
+																<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+																	<span class="text-sm">Détails</span>
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+																		<path d="M5 12h14"></path>
+																		<path d="m12 5 7 7-7 7"></path>
+																	</svg>
+																</div>
+															</div>
+															<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+														</div> #}
+
+	</div>
+</div>
