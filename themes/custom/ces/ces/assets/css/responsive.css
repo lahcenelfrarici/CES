@@ -1,5 +1,18 @@
 /* Responsive adjustments */
 
+@media (min-width: 99px) {
+header div.relative.group >a:first-child {
+  margin-bottom: 0;
+}
+header  div.relative.group .absolute.left-0.mt-4.hidden.group-hover\:block.bg-slate-900.rounded-xl.p-4.min-w-\[200px\] {
+  margin-top: 0px;
+  padding-left: 10px;
+}
+
+header div.relative.group span {
+  display: none;
+}
+}
 @media (max-width: 991px) {
 .top___espace {
   margin-top: 80px;
