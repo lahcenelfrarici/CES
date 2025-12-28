@@ -33,8 +33,9 @@
               <div class="max-w-7xl mx-auto px-6">
                 <div style="opacity: 1; transform: none;">
                   <h2 class="text-3xl text-white mb-6">{{'Produits similaires'|t}}</h2>
-                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
+
+                 	{{ drupal_view('listing_all_renoves','block_1') }}
+                    {# <div
                       class="group bg-gradient-to-br from-slate-900/50 to-emerald-900/30 backdrop-blur-sm border border-emerald-500/20 rounded-3xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 cursor-pointer">
                       <div class="relative h-48 overflow-hidden">
                         <div
@@ -72,8 +73,8 @@
                         <h3 class="text-xl text-white group-hover:text-emerald-400 transition-colors">Table de repassage
                         </h3>
                       </div>
-                    </div>
-                  </div>
+                    </div> #}
+
                 </div>
               </div>
             </div>
