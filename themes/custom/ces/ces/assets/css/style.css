@@ -101,7 +101,7 @@
   color: var(--color-gray-300);
 }
 
-.act_bs article div {
+.act_bs article .body__acc {
   z-index: 9;
   position: relative;
 }

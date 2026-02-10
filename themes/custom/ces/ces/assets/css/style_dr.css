@@ -3340,3 +3340,8 @@ html {
   inherits: false;
   initial-value: 1;
 }
+
+
+.act_bs .absolute.inset-0.bg-gradient-to-br.from-cyan-500.to-blue-600.rounded-3xl.opacity-0.group-hover\:opacity-20.blur-xl.transition-opacity.duration-500 {
+  display: none;
+}

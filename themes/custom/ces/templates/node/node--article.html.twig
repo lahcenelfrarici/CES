@@ -36,48 +36,7 @@
 			<div class="relative rounded-2xl overflow-hidden mb-12 group"><img src="{{ file_url(node.field_image.entity.uri.value) }}" alt="Équipement de pressing de qualité" class="w-full h-auto group-hover:scale-105 transition-transform duration-700">
 				<div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 			</div>
-			<div class="space-y-8">
-				<div class="bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
-					<h2 class="text-cyan-400 mb-4">Investir dans la Qualité de l'Équipement de Pressing</h2>
-					<p class="text-white/70 leading-relaxed">L'équipement de pressing de qualité est bien plus qu'un
-												                        simple outil. C'est l'épine dorsale de votre entreprise. Opter pour des machines robustes,
-												                        fiables et efficaces est un investissement qui porte ses fruits à long terme.</p>
-				</div>
-				<div class="bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
-					<h2 class="text-cyan-400 mb-4">Optimisation des Résultats en Pressing</h2>
-					<p class="text-white/70 leading-relaxed">Des presses à repasser qui fonctionnent sans accroc, des
-												                        machines à laver qui préservent les tissus, et des séchoirs qui offrent des résultats
-												                        impeccables : tout cela contribue à optimiser la qualité de vos services de pressing.</p>
-				</div>
-				<div class="bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
-					<h2 class="text-cyan-400 mb-4">Fidélisation de la Clientèle et Satisfaction des Clients</h2>
-					<p class="text-white/70 leading-relaxed">La qualité de l'équipement se traduit directement par la
-												                        satisfaction de la clientèle. Des vêtements bien entretenus et traités avec soin sont le reflet
-												                        de votre professionnalisme. Cela fidélise vos clients et les incite à revenir.</p>
-				</div>
-				<div class="bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
-					<h2 class="text-cyan-400 mb-4">Durabilité et Efficacité de l'Équipement</h2>
-					<p class="text-white/70 leading-relaxed">Lorsque vous investissez dans un équipement de pressing
-												                        de qualité, vous investissez dans la durabilité. Ces machines sont conçues pour résister à une
-												                        utilisation intensive et à l'épreuve du temps. Cela signifie moins de temps d'arrêt pour les
-												                        réparations et une productivité accrue.</p>
-				</div>
-				<div class="bg-gradient-to-br from-slate-800/50 via-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20">
-					<h2 class="text-cyan-400 mb-4">Amélioration de la Performance en Pressing</h2>
-					<p class="text-white/70 leading-relaxed">L'équipement de pressing moderne est conçu avec des
-												                        fonctionnalités avancées qui améliorent la performance. Des réglages de température précis, des
-												                        cycles de lavage optimisés et des systèmes de contrôle avancés garantissent des résultats
-												                        constants et de haute qualité.</p>
-				</div>
-				<div class="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl p-8 border-l-4 border-cyan-400">
-					<p class="text-white/90 leading-relaxed">
-						<span class="font-semibold">En conclusion</span>,
-														                        l'investissement dans un équipement de pressing de qualité est un pilier essentiel pour garantir
-														                        des services de pressing de haute qualité. Cela a un impact direct sur la satisfaction des
-														                        clients, la fidélisation et la rentabilité de votre entreprise. Ne sous-estimez pas le pouvoir
-														                        de l'équipement de pressing de qualité - c'est la pierre angulaire de votre succès.</p>
-				</div>
-			</div>
+	 {{ content.field_body_detail }}
 
 		</div>
 		<div style="opacity: 1; transform: none;">
@@ -88,11 +47,11 @@
 						<h3 class="text-white">{{'Autres Actualités'|t}}</h3>
 					</div>
 					<div class="space-y-4">
-          {{ drupal_view('actualites','block_1') }}
+						{{ drupal_view('actualites','block_1') }}
 
 						<div class="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
 						<a href="/actualites" class="w-full py-3 px-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 rounded-xl border border-cyan-500/30 text-white text-sm transition-all">Voir
-														                          toutes les actualités</a>
+																					                          toutes les actualités</a>
 					</div>
 				</div>
 			</div>
@@ -127,7 +86,7 @@
 
 
       <div class="wrapper-description">
-        {{ content.body }}
+        {{ content.field_body_detail }}
       </div>
       <div class="btn--pls">
                             <a class="" href="{{ file_url(node.field_pdf.entity.uri.value) }}" download="">
