@@ -3345,3 +3345,16 @@ html {
 .act_bs .absolute.inset-0.bg-gradient-to-br.from-cyan-500.to-blue-600.rounded-3xl.opacity-0.group-hover\:opacity-20.blur-xl.transition-opacity.duration-500 {
   display: none;
 }
+
+.sab__4 {
+  display: none;
+}
+.grid-cols-1 .item:nth-child(3n + 1) .sab__1 {
+  display: flex;
+}
+.grid-cols-1 .item:nth-child(3n + 2) .sab__2 {
+  display: flex;
+}
+.grid-cols-1 .item:nth-child(3n + 3) .sab__3 {
+  display: flex;
+}
