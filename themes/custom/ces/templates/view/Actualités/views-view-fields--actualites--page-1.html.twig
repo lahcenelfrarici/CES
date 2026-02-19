@@ -1,6 +1,6 @@
 <article style="opacity: 1; transform: none;">
 	<div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
-	<div class="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
+	<div class="relative bg-white rounded-3xl border border-gray-200 shadow-lg overflow-hidden">
 		<div class="relative h-80 overflow-hidden"><img src="{{ file_url(row._entity.field_image.entity.fileuri) }}" alt="L'Impact de la Qualité de l'Équipement sur la Qualité du Service en Pressing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
 			<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
 			<div class="absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg" style="transform: none;">
@@ -15,13 +15,13 @@
 
 			</div>
 			<div class="absolute top-6 left-6">
-				<div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-					<span class="text-white text-sm">{{ fields.field_categorie.content }}</span>
+				<div class="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2">
+					<span class="text-gray-900 text-sm font-medium">{{ fields.field_categorie.content }}</span>
 				</div>
 			</div>
 		</div>
 		<div class="p-8 body__acc">
-			<h3 class="text-white text-2xl mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-600 transition-all duration-300">
+			<h3 class="text-gray-900 text-2xl mb-4 leading-tight font-bold group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300">
 				{{ fields.title.content }}</h3>
 			{{ fields.body.content }}
 			<div class="flex items-center justify-between">

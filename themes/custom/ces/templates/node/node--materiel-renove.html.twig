@@ -20,14 +20,14 @@
 			</svg>
 			<span>{{'Retour aux catégories'|t}}</span>
 		</button>
-		<div class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full px-6 py-3 mb-8" style="opacity: 1; transform: none;">
+		<div class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 rounded-full px-6 py-3 mb-8" style="opacity: 1; transform: none;">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench w-5 h-5 text-emerald-400" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg>
 			<span class="text-emerald-300">{{'Matériel Rénové'|t}}</span>
 		</div>
 		<h1 class="text-6xl md:text-7xl mb-8 leading-tight" style="opacity: 1; transform: none;">
-			<span class="text-white">{{ node.title.value }}</span>
+			<span class="text-gray-900 block mb-2 font-bold">{{ node.title.value }}</span>
 		</h1>
-		<p class="text-xl text-gray-300 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre
+		<p class="text-xl text-gray-700 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre
 																		                  sélection de machine à sec neufs avec garantie complète.</p>
 	</div>
 	<div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -56,7 +56,7 @@
 								{% set detail_node = paragraph.field_plus_detail.0.entity %}
 							{% set node_url = path('entity.node.canonical', {'node': detail_node.id()}) %}
 							{% endif %}
-								<a href="{{ node_url }}" class="group relative bg-gradient-to-br from-slate-900/50 to-emerald-900/30 backdrop-blur-sm border border-emerald-500/20 rounded-3xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 cursor-pointer"> <div class="relative h-64 overflow-hidden">
+								<a href="{{ node_url }}" class="group relative bg-white border border-gray-200 rounded-3xl overflow-hidden hover:border-emerald-400 hover:shadow-xl transition-all duration-300 cursor-pointer"> <div class="relative h-64 overflow-hidden">
 									<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
 
 									{# Get image from field_image with target_id = 19 #}
@@ -65,16 +65,16 @@
 										<img src="{{ file_url(image.uri.value) }}" alt="{{ paragraph.field_image.0.alt }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
 									{% endif %}
 
-									<div class="absolute top-4 right-4 z-20 bg-emerald-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<div class="absolute top-4 right-4 z-20 bg-emerald-600 backdrop-blur-sm px-4 py-2 rounded-full">
 										<span class="text-white text-sm">{{'Rénové'|t}}</span>
 									</div>
 								</div>
 
 								<div class="relative p-6">
-									<h3 class="text-2xl text-white mb-4 group-hover:text-emerald-400 transition-colors">
+									<h3 class="text-2xl text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors font-bold">
 										{{ title }}
 									</h3>
-									<div class="flex items-center gap-2 text-emerald-400 group-hover:gap-3 transition-all">
+									<div class="flex items-center gap-2 text-emerald-600 group-hover:gap-3 transition-all">
 										<span class="text-sm">{{'Voir les détails'|t}}</span>
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
 									</div>

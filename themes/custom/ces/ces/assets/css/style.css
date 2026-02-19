@@ -3,7 +3,7 @@
 }
 
 .scrolled_header nav>div {
-  background-color: color-mix(in oklab, var(--color-slate-900) 80%, transparent);
+  background-color: oklab(1 0 5.96046e-8 / 0.9);
   width: max-content;
   padding-inline: calc(var(--spacing) * 8);
   padding-block: calc(var(--spacing) * 3);
@@ -56,7 +56,7 @@
   --tw-gradient-from: var(--color-cyan-500);
   --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   --tw-gradient-position: to right in oklab;
-  background-image: linear-gradient(var(--tw-gradient-stops));
+  background-image: linear-gradient(to right, oklch(0.715 0.143 215.221) 0%, rgb(48, 195, 223) 100%);
   border-radius: 3.40282e38px;
   padding-block: calc(var(--spacing) * 2);
 }
@@ -98,7 +98,8 @@
 }
 
 .body__acc p {
-  color: var(--color-gray-300);
+  /* color: var(--color-gray-300); */
+  color: var(--color-gray-700);
 }
 
 .act_bs article .body__acc {
@@ -139,4 +140,48 @@ header .relative.group .hidden a {
 }
 .body__text p {
   color: var(--color-gray-300);
+}
+.relative.group.dropdown__items div {
+  background-color: #fff !important;
+}
+.relative.group.dropdown__items  >div a {
+  color: rgb(30, 41, 59);
+}
+body:not(.path-frontpage) #block-ces-main-menu a {
+  color: var(--color-slate-900);
+}
+body:not(.path-frontpage) #block-ces-main-menu .text-cyan-400 {
+  color: var(--color-cyan-400);
+}
+/*  */
+
+.filter-btn.active {
+  background-color: var(--blue-main) !important;
+}
+.filter-btn {
+  background-color: rgb(255, 255, 255) !important;
+  color: var(--color-slate-900);
+}
+body:not(.path-frontpage) #block-ces-main-menu a:last-child {
+  color: #fff !important;
+}
+.p-8.body__acc .flex.items-center.justify-between .flex.items-center.gap-2.text-gray-400.text-sm span {
+  color: var(--color-gray-600);
+}
+
+.relative.group.dropdown__items >div {
+  border: 1px solid #00bddc;
+}
+html body:not(.path-frontpage) #block-ces-main-menu .block.py-2 {
+  color: var(--color-slate-900) !important;
+}
+.detailt---5 p {
+  color: var(--color-gray-700);
+  font-size: var(--text-xl);
+}
+#fnt__sv {
+  font-size: 36px;
+}
+.all__ar {
+  background-color: #fff;
 }

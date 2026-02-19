@@ -30,9 +30,9 @@
 			<span class="text-cyan-300">{{'Matériel Neuf'|t}}</span>
 		</div>
 		<h1 class="text-6xl md:text-7xl mb-8 leading-tight" style="opacity: 1; transform: none;">
-			<span class="text-white">{{ node.title.value }}</span>
+			<span class="text-gray-900 block mb-2 font-bold">{{ node.title.value }}</span>
 		</h1>
-		<p class="text-xl text-gray-300 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre
+		<p class="text-xl text-gray-700 max-w-3xl" style="opacity: 1; transform: none;">Découvrez notre
 												                  sélection de machine à sec neufs avec garantie complète.</p>
 	</div>
 	<div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -53,7 +53,7 @@
 							{% set pdf_file = paragraph.field_pdf.0.entity %}
 							{% set pdf_url = file_url(pdf_file.uri.value) %}
 
-							<a href="{{ pdf_url }}" download class="group relative bg-gradient-to-br from-slate-900/50 to-cyan-900/30 backdrop-blur-sm border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer block">
+							<a href="{{ pdf_url }}" download class="group relative bg-white border border-gray-200 rounded-3xl overflow-hidden hover:border-blue-400 hover:shadow-xl transition-all duration-300 cursor-pointer">
 								<div class="relative h-64 overflow-hidden">
 									<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
 
@@ -63,16 +63,16 @@
 										<img src="{{ file_url(image.uri.value) }}" alt="{{ paragraph.field_image.0.alt }}" class="add_img w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
 									{% endif %}
 
-									<div class="absolute top-4 right-4 z-20 bg-cyan-500/90 backdrop-blur-sm px-4 py-2 rounded-full">
+									<div class="absolute top-4 right-4 z-20 bg-blue-600 backdrop-blur-sm px-4 py-2 rounded-full">
 										<span class="text-white text-sm">Neuf</span>
 									</div>
 								</div>
 
 								<div class="relative p-6">
-									<h3 class="text-2xl text-white mb-4 group-hover:text-cyan-400 transition-colors">
+									<h3 class="text-2xl text-gray-900 mb-4 group-hover:text-blue-600 transition-colors font-bold">
 										{{ title }}
 									</h3>
-									<div class="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+									<div class="flex items-center gap-2 text-blue-600 group-hover:gap-3 transition-all">
 										<span class="text-sm">{{'Télécharger'|t}}</span>
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-4 h-4">
 											<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>

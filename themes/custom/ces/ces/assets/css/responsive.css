@@ -14,6 +14,19 @@ header div.relative.group span {
 }
 }
 @media (max-width: 991px) {
+
+#banner__slider_hp .grid.grid-cols-2.gap-5 {
+  display: none;
+}
+.show__menu {
+  background-color: #fff;
+}
+.show__menu a {
+  color: #000;
+}
+.show__menu a:hover {
+  background-color: #eaf7fc;
+}
 .top___espace {
   margin-top: 80px;
 }

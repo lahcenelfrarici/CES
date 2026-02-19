@@ -1,7 +1,7 @@
          <div class="relative min-h-screen pt-32 pb-20">
               <div class="max-w-7xl mx-auto px-6 mb-8">
                 <div
-                  class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-full px-6 py-3"
+                  class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 rounded-full px-6 py-3"
                   style="opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="lucide lucide-wrench w-5 h-5 text-emerald-400" aria-hidden="true">
@@ -22,9 +22,9 @@
                         alt="Machine à laver" class="w-full h-auto object-contain">
                     </div>
                   </div>
-                  <div class="space-y-8 body__text" style="opacity: 1; transform: none;">
+                  <div class="space-y-8 body__text detailt---5" style="opacity: 1; transform: none;">
                     <div>
-                      <h1 class="text-5xl md:text-6xl mb-6 leading-tight text-white">{{node.title.value}}</h1>
+                      <h1 class="text-5xl md:text-6xl mb-6 leading-tight text-gray-900 font-bold">{{node.title.value}}</h1>
               {{content.body}}
                     </div>
                   </div>
@@ -32,7 +32,7 @@
               </div>
               <div class="max-w-7xl mx-auto px-6">
                 <div style="opacity: 1; transform: none;">
-                  <h2 class="text-3xl text-white mb-6">{{'Produits similaires'|t}}</h2>
+                  <h2 class="text-3xl text-gray-900 mb-6 font-bold">{{'Produits similaires'|t}}</h2>
 
                  	{{ drupal_view('listing_all_renoves','block_1') }}
                     {# <div
