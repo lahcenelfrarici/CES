@@ -3841,3 +3841,37 @@ html {
 .grid-cols-1 .item:nth-child(3n + 3) .sab__3 {
   display: flex;
 } */
+
+.title-----first div {
+  font-size: 35px;
+  color: var(--blue-main);
+  border-color: 0;
+  background-color: #fff;
+  font-weight: bold;
+  border: 1px solid;
+}
+.first---img {
+  animation: zoomInOut 6s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#services .text-slate-900.font-bold.text-2xl.mb-4 {
+  color: var(--blue-main);
+}
+#sc__list_views h3 , .page-node-type-materiel-neuf .relative.p-6 h3{
+  color: var(--blue-main);
+}
+.path-listing-all-renoves #sc__list_views h3{
+  color: #096;
+}
