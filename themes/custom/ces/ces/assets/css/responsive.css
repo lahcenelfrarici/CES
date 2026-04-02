@@ -1,35 +1,45 @@
 /* Responsive adjustments */
 
 @media (min-width: 99px) {
-header div.relative.group >a:first-child {
-  margin-bottom: 0;
-}
-header  div.relative.group .absolute.left-0.mt-4.hidden.group-hover\:block.bg-slate-900.rounded-xl.p-4.min-w-\[200px\] {
-  margin-top: 0px;
-  padding-left: 10px;
+  header div.relative.group>a:first-child {
+    margin-bottom: 0;
+  }
+
+  header div.relative.group .absolute.left-0.mt-4.hidden.group-hover\:block.bg-slate-900.rounded-xl.p-4.min-w-\[200px\] {
+    margin-top: 0px;
+    padding-left: 10px;
+  }
+
+  header div.relative.group span {
+    display: none;
+  }
 }
 
-header div.relative.group span {
-  display: none;
-}
-}
 @media (max-width: 991px) {
+  .page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-8 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 
-#banner__slider_hp .grid.grid-cols-2.gap-5 {
-  display: none;
-}
-.show__menu {
-  background-color: #fff;
-}
-.show__menu a {
-  color: #000;
-}
-.show__menu a:hover {
-  background-color: #eaf7fc;
-}
-.top___espace {
-  margin-top: 80px;
-}
+  #banner__slider_hp .grid.grid-cols-2.gap-5 {
+    display: none;
+  }
+
+  .show__menu {
+    background-color: #fff;
+  }
+
+  .show__menu a {
+    color: #000;
+  }
+
+  .show__menu a:hover {
+    background-color: #eaf7fc;
+  }
+
+  .top___espace {
+    margin-top: 80px;
+  }
+
   .items__menu_principe {
     display: none;
   }

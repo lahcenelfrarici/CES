@@ -3875,3 +3875,17 @@ html {
 .path-listing-all-renoves #sc__list_views h3{
   color: #096;
 }
+#about .col-span-2 img {
+  height: 315px;
+}
+
+.page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .relative.p-6 {
+  display: none;
+}
+
+.page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20  .relative.h-64.overflow-hidden {
+  height: 500px;
+}
+.page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-8 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
