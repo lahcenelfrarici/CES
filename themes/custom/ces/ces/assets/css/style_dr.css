@@ -3890,9 +3890,13 @@ html {
   background: transparent;
   border: 0;
   border-radius: 30px;
-  height:400px
+  height:400px;
+    pointer-events: none;
 }
 
+.page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .relative.h-64.overflow-hidden .absolute.inset-0.bg-gradient-to-t.from-slate-900.via-slate-900\/50.to-transparent.z-10 {
+  --tw-gradient-via: transparent;
+}
 .page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-8 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
