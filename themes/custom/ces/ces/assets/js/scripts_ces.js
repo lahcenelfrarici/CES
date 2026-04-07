@@ -1,6 +1,14 @@
 (function ($) {
   $(function () {
 
+    // $('#owl-carousel').owlCarousel({
+    //   loop: true,
+    //   margin: 30,
+    //   dots: true,
+    //   nav: true,
+    //   items: 1,
+    // })
+
     var path = window.location.pathname;
 
     // Normalize the path (remove trailing slash)

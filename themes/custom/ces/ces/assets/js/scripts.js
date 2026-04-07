@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+
+     
   // Find all .wrapper_img elements that do not contain an <img> tag
   $('.wrapper_img').each(function () {
     if ($(this).find('img , video').length === 0) {
