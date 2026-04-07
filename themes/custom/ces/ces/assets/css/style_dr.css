@@ -3903,3 +3903,52 @@ html {
 .page-node-type-materiel-renove .relative.min-h-screen.pt-32.pb-20 .relative.h-64.overflow-hidden img {
   object-fit: contain;
 }
+
+.path-listing-all-renoves .text-transparent.bg-clip-text.bg-gradient-to-r.from-emerald-600.via-emerald-700.to-emerald-800.font-bold {
+  color: #b01e1e;
+}
+.path-listing-all-renoves .max-w-7xl.mx-auto.px-6.mb-16.relative.z-10.top___espace >div {
+  --tw-gradient-to: #b01e1e;
+  border-color: #b01e1e;
+  color: #fff;
+}
+.path-listing-all-renoves .max-w-7xl.mx-auto.px-6.mb-16.relative.z-10.top___espace > div svg {
+  color: #b01e1e;
+}
+.path-listing-all-renoves .max-w-7xl.mx-auto.px-6.mb-16.relative.z-10.top___espace > div span {
+  color: #000;
+}
+
+.path-listing-all-renoves .absolute.top-4.right-4.z-20.bg-emerald-600.backdrop-blur-sm.px-4.py-2.rounded-full {
+  background-color: #b01e1e;
+}
+
+.path-listing-all-renoves  .flex.items-center.gap-2.text-emerald-600.group-hover\:gap-3.transition-all {
+  color: #b01e1e;
+}
+.path-listing-all-renoves  #sc__list_views .group:hover {
+  border-color: #b01e1e;
+}
+
+.path-listing-all-renoves #sc__list_views h3 {
+  color: #b01e1e;
+}
+.page-node-type-materiel-neuf h1 span {
+  color: var(--blue-main);
+}
+.text-transparent-color--1 {
+  color: var(--blue-main);
+}
+.page-node-type-materiel-renove #menu___p h1 span {
+  color: #b01e1e;
+}
+.page-node-type-materiel-renove .absolute.top-4.right-4.z-20.bg-emerald-600.backdrop-blur-sm.px-4.py-2.rounded-full {
+  background-color: #b01e1e;
+}
+.inline-flex.items-center.gap-3.bg-gradient-to-r.from-emerald-50.to-emerald-100.border.border-emerald-200.rounded-full.px-6.py-3.mb-8 {
+  --tw-gradient-to: #b01e1e;
+  border-color: #b01e1e;
+}
+.inline-flex.items-center.gap-3.bg-gradient-to-r.from-emerald-50.to-emerald-100.border.border-emerald-200.rounded-full.px-6.py-3.mb-8 .lucide.lucide-wrench.w-5.h-5.text-emerald-400 {
+  color: #b01e1e;
+}
