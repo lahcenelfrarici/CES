@@ -113,6 +113,18 @@
   #about>div>div {
     display: block;
   }
+
+  #about .relative.rounded-3xl.overflow-hidden.h-64.group {
+    height: auto;
+  }
+
+  #about .col-span-2 img {
+    height: 100%;
+  }
+
+  #about .inline-block.mb-6 {
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 767px) {}
