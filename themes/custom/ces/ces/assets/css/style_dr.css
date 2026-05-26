@@ -3976,3 +3976,6 @@ html {
 .wrapper_col .relative.z-10 > div {
   width: 30%;
 }
+#about__order h3 {
+  text-transform: uppercase;
+}
