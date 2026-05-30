@@ -3983,3 +3983,12 @@ html {
 #nos_marque_ms h3 {
   text-transform: uppercase;
 }
+.page-node-type-materiel-neuf .relative.min-h-screen.pt-32.pb-20 h3 {
+  text-transform: uppercase;
+}
+.path-listing-all-neuf .relative.min-h-screen.pt-32.pb-20 h3 {
+  text-transform: uppercase;
+}
+.path-listing-all-renoves #sc__list_views h3 {
+  text-transform: uppercase;
+}
