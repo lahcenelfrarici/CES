@@ -3992,3 +3992,8 @@ html {
 .path-listing-all-renoves #sc__list_views h3 {
   text-transform: uppercase;
 }
+.wrapper_col .relative.z-10 > div {
+  background: transparent;
+  --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, #0000001a), 0 4px 6px -4px var(--tw-shadow-color, #0000001a);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
