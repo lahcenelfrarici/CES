@@ -4065,3 +4065,14 @@ html {
   --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, #0000001a), 0 4px 6px -4px var(--tw-shadow-color, #0000001a);
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
+
+.lavage__1 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #0793d1;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+}
+#banner__slider_hp .flex.flex-col.items-center.gap-2 {
+  display: none;
+}
