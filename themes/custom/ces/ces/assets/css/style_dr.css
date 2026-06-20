@@ -4073,6 +4073,36 @@ html {
   font-family: Arial, sans-serif;
   font-weight: 300;
 }
-#banner__slider_hp .flex.flex-col.items-center.gap-2 {
+/* #banner__slider_hp .flex.flex-col.items-center.gap-2 {
   display: none;
+} */
+
+.action-gototop {
+cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+}
+.action-gototop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#about .text-white.font-bold.text-3xl {
+  font-size: 45px;
+  font-weight: bold;
+}
+.text-white\/80.text-sm {
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.references__items .text-white.text-lg.mb-1.leading-tight {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.references__items .text-cyan-400.text-sm.flex.items-center.gap-1 {
+  text-transform: uppercase;
 }
