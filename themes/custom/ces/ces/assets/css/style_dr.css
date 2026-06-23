@@ -4098,7 +4098,14 @@ cursor: pointer;
   font-weight: bold;
   color: #fff;
 }
+#nos_marque_ms h2 {
 
+  color: var(--blue-main);
+}
+.references__items .item h3, .references__items .item p {
+  text-transform: uppercase;
+}
+/*
 .references__items .text-white.text-lg.mb-1.leading-tight {
   text-transform: uppercase;
   font-size: 15px;
@@ -4135,10 +4142,7 @@ cursor: pointer;
   text-transform: uppercase;
 }
 
-#nos_marque_ms h2 {
-  text-transform: uppercase;
-  color: var(--blue-main);
-}
+
 
 .path-listing-all-neuf h1 , .path-listing-all-renoves h1 ,.page-node-type-materiel-neuf h1,.page-node-type-materiel-renove h1{
   text-transform: uppercase;
@@ -4155,4 +4159,4 @@ cursor: pointer;
 }
 .maps__lx h2 {
   text-transform: uppercase;
-}
+} */
