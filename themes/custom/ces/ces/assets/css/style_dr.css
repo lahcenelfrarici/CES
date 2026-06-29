@@ -4167,3 +4167,24 @@ cursor: pointer;
   background-color: #4fce5d !important;
   border-radius: 30px;
 }
+
+.wrapper___h {
+  --tw-gradient-to: #0b7195;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  --tw-gradient-from: #0b7195;
+}
+.wrapper____ {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0 10px;
+}
+.wrapper____ >div {
+  width: 100%;
+}
+.wrapper____ .text-white\/80.text-sm {
+  font-size: 18px;
+}
+.wrapper____ .text-white.font-bold.text-3xl {
+  font-size: 35px !important;
+}
