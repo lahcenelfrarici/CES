@@ -4188,3 +4188,7 @@ cursor: pointer;
 .wrapper____ .text-white.font-bold.text-3xl {
   font-size: 35px !important;
 }
+.wrapper____j{
+  display: flex;
+  flex-direction: column;
+}
