@@ -4215,3 +4215,14 @@ cursor: pointer;
   background-color: #4fce5d !important;
   border-radius: 30px;
 }
+
+
+.whaapp___fixed a {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  right: -3px;
+}
+.top__img__fixed {
+  margin: 10px 0;
+}

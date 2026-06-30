@@ -36,307 +36,319 @@
 <!DOCTYPE html>
 <html{{html_attributes}}>
 	<head>
-	<head-placeholder token="{{ placeholder_token }}">
-  <title>{{ head_title|safe_join(' | ') }}</title>
-  <css-placeholder token="{{ placeholder_token }}">
-  <js-placeholder token="{{ placeholder_token }}">
+		<head-placeholder token="{{ placeholder_token }}">
+			<title>{{ head_title|safe_join(' | ') }}</title>
+			<css-placeholder token="{{ placeholder_token }}">
+				<js-placeholder token="{{ placeholder_token }}">
 
-  {% include '@olivero/includes/preload.twig' with { olivero_path: olivero_path } only %}
-  {{ noscript_styles }}
+					{% include '@olivero/includes/preload.twig' with { olivero_path: olivero_path } only %}
+					{{ noscript_styles }}
 
-  {# {% if html_attributes['dir'] == 'rtl' %}
-    {{ attach_library('cfc/global-css-rtl') }}
-  {% endif %} #}
-  {{ attach_library('cfc/global-css-responsive') }}
+					{# {% if html_attributes['dir'] == 'rtl' %}
+					    {{ attach_library('cfc/global-css-rtl') }}
+					  {% endif %} #}
+					{{ attach_library('cfc/global-css-responsive') }}
 
-  {# --- Google Tag Manager (gtag.js) --- #}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZTKQMZ09X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1ZTKQMZ09X');
-  </script>
+					{# --- Google Tag Manager (gtag.js) --- #}
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZTKQMZ09X"></script>
+					<script>
+						window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'G-1ZTKQMZ09X');
+					</script>
 
-</head>
+				</head>
 
 				<body{{attributes.addClass(body_classes)}}>
-        <a id="fixedWhatsAppIcon" class="whaapp___fixed w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 rounded-full flex items-center justify-center wow zoomIn" href="https://wa.me/212666454360?text=Hello%20from%20your%20website" target="_blank">
-  <svg viewBox="0 0 32 32" class="whatsapp-ico"><path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></svg>
-</a>
-         <div id="container">
-    <div class="">
-      <div class="">
-        <div class="tailwind css-myl2ny css-exq74d" id="menu___p">
-          <div class="bg-gradient-to-br from-slate-50 via-blue-50 to-white min-h-screen overflow-x-hidden" >
-					<!-- Lodaer -->
-					{# <style id="loader-style">
-						#loader {
-							position: fixed;
-							width: 100%;
-							height: 100%;
-							top: 0;
-							left: 0;
-							background: #009681;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							z-index: 9999;
-						}
+					{# <a id="fixedWhatsAppIcon" class="whaapp___fixed w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 rounded-full flex items-center justify-center wow zoomIn" href="https://wa.me/212666454360?text=Hello%20from%20your%20website" target="_blank">
+					  <svg viewBox="0 0 32 32" class="whatsapp-ico"><path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path></svg>
+					</a> #}
+					<div class="whaapp___fixed ">
 
-						@keyframes gradient {
-							0% {
-								background-position: 0 50%;
-							}
-							50% {
-								background-position: 100% 50%;
-							}
-							100% {
-								background-position: 0 50%;
-							}
-						}
 
-						.cube-folding {
-							width: 50px;
-							height: 50px;
-							display: inline-block;
-							-webkit-transform: rotate(45deg);
-							-moz-transform: rotate(45deg);
-							transform: rotate(45deg);
-							font-size: 0;
-						}
-
-						.cube-folding span {
-							position: relative;
-							width: 25px;
-							height: 25px;
-							-webkit-transform: scale(1.1);
-							-moz-transform: scale(1.1);
-							transform: scale(1.1);
-							display: inline-block;
-						}
-
-						.cube-folding span::before {
-							content: "";
-							background-color: white;
-							position: absolute;
-							left: 0;
-							top: 0;
-							display: block;
-							width: 25px;
-							height: 25px;
-							-moz-transform-origin: 100% 100%;
-							-ms-transform-origin: 100% 100%;
-							-webkit-transform-origin: 100% 100%;
-							transform-origin: 100% 100%;
-							-webkit-animation: folding 2.5s infinite linear both;
-							-moz-animation: folding 2.5s infinite linear both;
-							animation: folding 2.5s infinite linear both;
-						}
-
-						.cube-folding .leaf2 {
-							-webkit-transform: rotateZ(90deg) scale(1.1);
-							-moz-transform: rotateZ(90deg) scale(1.1);
-							transform: rotateZ(90deg) scale(1.1);
-						}
-
-						.cube-folding .leaf2::before {
-							-webkit-animation-delay: 0.3s;
-							animation-delay: 0.3s;
-							background-color: #f2f2f2;
-						}
-
-						.cube-folding .leaf3 {
-							-webkit-transform: rotateZ(270deg) scale(1.1);
-							-moz-transform: rotateZ(270deg) scale(1.1);
-							transform: rotateZ(270deg) scale(1.1);
-						}
-
-						.cube-folding .leaf3::before {
-							-webkit-animation-delay: 0.9s;
-							animation-delay: 0.9s;
-							background-color: #f2f2f2;
-						}
-
-						.cube-folding .leaf4 {
-							-webkit-transform: rotateZ(180deg) scale(1.1);
-							-moz-transform: rotateZ(180deg) scale(1.1);
-							transform: rotateZ(180deg) scale(1.1);
-						}
-
-						.cube-folding .leaf4::before {
-							-webkit-animation-delay: 0.6s;
-							animation-delay: 0.6s;
-							background-color: #e6e6e6;
-						}
-
-						@-webkit-keyframes folding {
-
-							0,
-							10% {
-								-webkit-transform: perspective(140px) rotateX(-180deg);
-								-moz-transform: perspective(140px) rotateX(-180deg);
-								transform: perspective(140px) rotateX(-180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-
-							25%,
-							75% {
-								-webkit-transform: perspective(140px) rotateX(0deg);
-								-moz-transform: perspective(140px) rotateX(0deg);
-								transform: perspective(140px) rotateX(0deg);
-								-webkit-opacity: 1;
-								-moz-opacity: 1;
-								opacity: 1;
-							}
-
-							90%,
-							100% {
-								-webkit-transform: perspective(140px) rotateY(180deg);
-								-moz-transform: perspective(140px) rotateY(180deg);
-								transform: perspective(140px) rotateY(180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-						}
-
-						@-moz-keyframes folding {
-
-							0,
-							10% {
-								-webkit-transform: perspective(140px) rotateX(-180deg);
-								-moz-transform: perspective(140px) rotateX(-180deg);
-								transform: perspective(140px) rotateX(-180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-
-							25%,
-							75% {
-								-webkit-transform: perspective(140px) rotateX(0deg);
-								-moz-transform: perspective(140px) rotateX(0deg);
-								transform: perspective(140px) rotateX(0deg);
-								-webkit-opacity: 1;
-								-moz-opacity: 1;
-								opacity: 1;
-							}
-
-							90%,
-							100% {
-								-webkit-transform: perspective(140px) rotateY(180deg);
-								-moz-transform: perspective(140px) rotateY(180deg);
-								transform: perspective(140px) rotateY(180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-						}
-
-						@-ms-keyframes folding {
-
-							0,
-							10% {
-								-webkit-transform: perspective(140px) rotateX(-180deg);
-								-moz-transform: perspective(140px) rotateX(-180deg);
-								transform: perspective(140px) rotateX(-180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-
-							25%,
-							75% {
-								-webkit-transform: perspective(140px) rotateX(0deg);
-								-moz-transform: perspective(140px) rotateX(0deg);
-								transform: perspective(140px) rotateX(0deg);
-								-webkit-opacity: 1;
-								-moz-opacity: 1;
-								opacity: 1;
-							}
-
-							90%,
-							100% {
-								-webkit-transform: perspective(140px) rotateY(180deg);
-								-moz-transform: perspective(140px) rotateY(180deg);
-								transform: perspective(140px) rotateY(180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-						}
-
-						@keyframes folding {
-
-							0,
-							10% {
-								-webkit-transform: perspective(140px) rotateX(-180deg);
-								-moz-transform: perspective(140px) rotateX(-180deg);
-								transform: perspective(140px) rotateX(-180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-
-							25%,
-							75% {
-								-webkit-transform: perspective(140px) rotateX(0deg);
-								-moz-transform: perspective(140px) rotateX(0deg);
-								transform: perspective(140px) rotateX(0deg);
-								-webkit-opacity: 1;
-								-moz-opacity: 1;
-								opacity: 1;
-							}
-
-							90%,
-							100% {
-								-webkit-transform: perspective(140px) rotateY(180deg);
-								-moz-transform: perspective(140px) rotateY(180deg);
-								transform: perspective(140px) rotateY(180deg);
-								-webkit-opacity: 0;
-								-moz-opacity: 0;
-								opacity: 0;
-							}
-						}
-					</style>
-					<div class="loader-d" id="loader">
-
-						<div class="loader-c">
-							<img src="/themes/custom/cfc/CFC/assets/images/loadinggif.gif" alt="drapeau loader">
-							<div class="inner one"></div>
-							<div class="inner two"></div>
-							<div class="inner three"></div>
+						<div class="top__img__fixed" style="">
+							<img alt="Logo" class="transition-all duration-300 h-16" src="https://ces.co.ma/sites/default/files/2026-06/ex_30.png">
 						</div>
-					</div> #}
+						<a id="fixedWhatsAppIcon" href="https://wa.me/212666454360?text=Hello%20from%20your%20website" target="_blank" class="w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 rounded-full flex items-center justify-center wow zoomIn">
+							<svg viewbox="0 0 32 32" class="whatsapp-ico">
+								<path d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z" fill-rule="evenodd"></path>
+							</svg>
+						</a>
+					</div>
+					<div id="container">
+						<div class="">
+							<div class="">
+								<div class="tailwind css-myl2ny css-exq74d" id="menu___p">
+									<div class="bg-gradient-to-br from-slate-50 via-blue-50 to-white min-h-screen overflow-x-hidden">
+										<!-- Lodaer -->
+										{# <style id="loader-style">
+																#loader {
+																	position: fixed;
+																	width: 100%;
+																	height: 100%;
+																	top: 0;
+																	left: 0;
+																	background: #009681;
+																	display: flex;
+																	justify-content: center;
+																	align-items: center;
+																	z-index: 9999;
+																}
 
-					{{ page_top }}
+																@keyframes gradient {
+																	0% {
+																		background-position: 0 50%;
+																	}
+																	50% {
+																		background-position: 100% 50%;
+																	}
+																	100% {
+																		background-position: 0 50%;
+																	}
+																}
 
-					{{ page }}
-					{{ page_bottom }}
+																.cube-folding {
+																	width: 50px;
+																	height: 50px;
+																	display: inline-block;
+																	-webkit-transform: rotate(45deg);
+																	-moz-transform: rotate(45deg);
+																	transform: rotate(45deg);
+																	font-size: 0;
+																}
 
-					<js-bottom-placeholder token="{{ placeholder_token }}">{# video modal #}
-						{# <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-																			<div class="modal-dialog modal-dialog-centered">
-																				<div class="modal-content">
-																					<div
-																						class="modal-header border-0">
-																						<!-- Remove border from modal header -->
-																						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-																						<!-- Close button with built-in close icon -->
-																					</div>
-																					<div class="modal-body">
-																						<iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
-																					</div>
-																				</div>
-																			</div>
-																		</div> #}
-                                              </div>
-        </div>
-      </div>
-    </div>
-  </div>
+																.cube-folding span {
+																	position: relative;
+																	width: 25px;
+																	height: 25px;
+																	-webkit-transform: scale(1.1);
+																	-moz-transform: scale(1.1);
+																	transform: scale(1.1);
+																	display: inline-block;
+																}
+
+																.cube-folding span::before {
+																	content: "";
+																	background-color: white;
+																	position: absolute;
+																	left: 0;
+																	top: 0;
+																	display: block;
+																	width: 25px;
+																	height: 25px;
+																	-moz-transform-origin: 100% 100%;
+																	-ms-transform-origin: 100% 100%;
+																	-webkit-transform-origin: 100% 100%;
+																	transform-origin: 100% 100%;
+																	-webkit-animation: folding 2.5s infinite linear both;
+																	-moz-animation: folding 2.5s infinite linear both;
+																	animation: folding 2.5s infinite linear both;
+																}
+
+																.cube-folding .leaf2 {
+																	-webkit-transform: rotateZ(90deg) scale(1.1);
+																	-moz-transform: rotateZ(90deg) scale(1.1);
+																	transform: rotateZ(90deg) scale(1.1);
+																}
+
+																.cube-folding .leaf2::before {
+																	-webkit-animation-delay: 0.3s;
+																	animation-delay: 0.3s;
+																	background-color: #f2f2f2;
+																}
+
+																.cube-folding .leaf3 {
+																	-webkit-transform: rotateZ(270deg) scale(1.1);
+																	-moz-transform: rotateZ(270deg) scale(1.1);
+																	transform: rotateZ(270deg) scale(1.1);
+																}
+
+																.cube-folding .leaf3::before {
+																	-webkit-animation-delay: 0.9s;
+																	animation-delay: 0.9s;
+																	background-color: #f2f2f2;
+																}
+
+																.cube-folding .leaf4 {
+																	-webkit-transform: rotateZ(180deg) scale(1.1);
+																	-moz-transform: rotateZ(180deg) scale(1.1);
+																	transform: rotateZ(180deg) scale(1.1);
+																}
+
+																.cube-folding .leaf4::before {
+																	-webkit-animation-delay: 0.6s;
+																	animation-delay: 0.6s;
+																	background-color: #e6e6e6;
+																}
+
+																@-webkit-keyframes folding {
+
+																	0,
+																	10% {
+																		-webkit-transform: perspective(140px) rotateX(-180deg);
+																		-moz-transform: perspective(140px) rotateX(-180deg);
+																		transform: perspective(140px) rotateX(-180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+
+																	25%,
+																	75% {
+																		-webkit-transform: perspective(140px) rotateX(0deg);
+																		-moz-transform: perspective(140px) rotateX(0deg);
+																		transform: perspective(140px) rotateX(0deg);
+																		-webkit-opacity: 1;
+																		-moz-opacity: 1;
+																		opacity: 1;
+																	}
+
+																	90%,
+																	100% {
+																		-webkit-transform: perspective(140px) rotateY(180deg);
+																		-moz-transform: perspective(140px) rotateY(180deg);
+																		transform: perspective(140px) rotateY(180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+																}
+
+																@-moz-keyframes folding {
+
+																	0,
+																	10% {
+																		-webkit-transform: perspective(140px) rotateX(-180deg);
+																		-moz-transform: perspective(140px) rotateX(-180deg);
+																		transform: perspective(140px) rotateX(-180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+
+																	25%,
+																	75% {
+																		-webkit-transform: perspective(140px) rotateX(0deg);
+																		-moz-transform: perspective(140px) rotateX(0deg);
+																		transform: perspective(140px) rotateX(0deg);
+																		-webkit-opacity: 1;
+																		-moz-opacity: 1;
+																		opacity: 1;
+																	}
+
+																	90%,
+																	100% {
+																		-webkit-transform: perspective(140px) rotateY(180deg);
+																		-moz-transform: perspective(140px) rotateY(180deg);
+																		transform: perspective(140px) rotateY(180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+																}
+
+																@-ms-keyframes folding {
+
+																	0,
+																	10% {
+																		-webkit-transform: perspective(140px) rotateX(-180deg);
+																		-moz-transform: perspective(140px) rotateX(-180deg);
+																		transform: perspective(140px) rotateX(-180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+
+																	25%,
+																	75% {
+																		-webkit-transform: perspective(140px) rotateX(0deg);
+																		-moz-transform: perspective(140px) rotateX(0deg);
+																		transform: perspective(140px) rotateX(0deg);
+																		-webkit-opacity: 1;
+																		-moz-opacity: 1;
+																		opacity: 1;
+																	}
+
+																	90%,
+																	100% {
+																		-webkit-transform: perspective(140px) rotateY(180deg);
+																		-moz-transform: perspective(140px) rotateY(180deg);
+																		transform: perspective(140px) rotateY(180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+																}
+
+																@keyframes folding {
+
+																	0,
+																	10% {
+																		-webkit-transform: perspective(140px) rotateX(-180deg);
+																		-moz-transform: perspective(140px) rotateX(-180deg);
+																		transform: perspective(140px) rotateX(-180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+
+																	25%,
+																	75% {
+																		-webkit-transform: perspective(140px) rotateX(0deg);
+																		-moz-transform: perspective(140px) rotateX(0deg);
+																		transform: perspective(140px) rotateX(0deg);
+																		-webkit-opacity: 1;
+																		-moz-opacity: 1;
+																		opacity: 1;
+																	}
+
+																	90%,
+																	100% {
+																		-webkit-transform: perspective(140px) rotateY(180deg);
+																		-moz-transform: perspective(140px) rotateY(180deg);
+																		transform: perspective(140px) rotateY(180deg);
+																		-webkit-opacity: 0;
+																		-moz-opacity: 0;
+																		opacity: 0;
+																	}
+																}
+															</style>
+															<div class="loader-d" id="loader">
+
+																<div class="loader-c">
+																	<img src="/themes/custom/cfc/CFC/assets/images/loadinggif.gif" alt="drapeau loader">
+																	<div class="inner one"></div>
+																	<div class="inner two"></div>
+																	<div class="inner three"></div>
+																</div>
+															</div> #}
+
+										{{ page_top }}
+
+										{{ page }}
+										{{ page_bottom }}<js-bottom-placeholder token="{{ placeholder_token }}"> {# video modal #}
+											{# <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+																														<div class="modal-dialog modal-dialog-centered">
+																															<div class="modal-content">
+																																<div
+																																	class="modal-header border-0">
+																																	<!-- Remove border from modal header -->
+																																	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+																																	<!-- Close button with built-in close icon -->
+																																</div>
+																																<div class="modal-body">
+																																	<iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+																																</div>
+																															</div>
+																														</div>
+																													</div> #}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</body>
 				</html>
