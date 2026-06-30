@@ -4202,3 +4202,16 @@ cursor: pointer;
 .whatapp_number span {
   color: #23bf35;
 }
+.whaapp___fixed {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+.whaapp___fixed svg {
+  fill: #fff;
+  outline-color: #4fce5d;
+  background-color: #4fce5d !important;
+  border-radius: 30px;
+}
