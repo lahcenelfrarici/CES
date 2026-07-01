@@ -4203,10 +4203,10 @@ cursor: pointer;
   color: #23bf35;
 }
 .whaapp___fixed {
-  position: fixed;
-  top: 50%;
+position: fixed;
+  bottom: 0;
   right: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   z-index: 9999;
 }
 .whaapp___fixed svg {
