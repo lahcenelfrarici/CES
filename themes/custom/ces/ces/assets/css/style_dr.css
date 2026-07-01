@@ -4226,3 +4226,10 @@ cursor: pointer;
 .top__img__fixed {
   margin: 10px 0;
 }
+.top__img__fixed img {
+  width: 100px;
+  height: 100px;
+}
+.whaapp___fixed a {
+  right: -25px;
+}
